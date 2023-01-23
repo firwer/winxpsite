@@ -28,18 +28,18 @@
 }
 
 .startbtn {
-  background-image: url("../assets/xp_btn_norm.png");
+  background-image: url("../../assets/xp_btn_norm.png");
   width: 97px;
   height: 30px;
   outline: none;
 }
 
 .startbtn:hover {
-  background-image: url("../assets/xp_btn_hover.png");
+  background-image: url("../../assets/xp_btn_hover.png");
 }
 
 .startbtn:active {
-  background-image: url("../assets/xp_btn_clicked.png");
+  background-image: url("../../assets/xp_btn_clicked.png");
 }
 
 .startbtn:focus {

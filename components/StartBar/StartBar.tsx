@@ -1,29 +1,36 @@
 import { useEffect, useState } from "react";
 import styles from "./StartBar.module.css";
-import greenshield from "../assets/green_shield.png";
-import internet from "../assets/internet.png";
-import sound from "../assets/sound.png";
-import removabledevice from "../assets/removabledevice.png";
+import greenshield from "../../assets/green_shield.png";
+import internet from "../../assets/internet.png";
+import sound from "../../assets/sound.png";
+import removabledevice from "../../assets/removabledevice.png";
 
+const getTime = () => {
+  const date = new Date();
+  let hour = date.getHours();
+  let hourPostFix = "AM";
+  let min = date.getMinutes();
+  if (hour >= 12) {
+    hour -= 12;
+    hourPostFix = "PM";
+  }
+  if (hour === 0) {
+    hour = 12;
+  }
+  if (min < 10) {
+    min = 0 + min;
+  }
+  return `${hour}:${min} ${hourPostFix}`;
+};
 const StartBar = () => {
-  const [time, setTime] = useState(
-    new Date().toLocaleTimeString([], {
-      hour: "numeric",
-      minute: "2-digit",
-      hour12: true,
-    })
-  );
+  const [time, setTime] = useState(getTime);
   useEffect(() => {
-    setInterval(() => {
-      setTime(
-        new Date().toLocaleTimeString([], {
-          hour: "numeric",
-          minute: "2-digit",
-          hour12: true,
-        })
-      );
-    }, 60000);
-  }, []);
+    const timer = setInterval(() => {
+      const newTime = getTime();
+      newTime !== time && setTime(newTime);
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [time]);
 
   return (
     <div className={styles.bluebar}>
