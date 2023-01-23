@@ -1,0 +1,74 @@
+.icon {
+  display: inline-block;
+
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background-color: transparent;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.iconimage {
+  position: absolute;
+  top: 25px;
+  left: 5px;
+  right: 5px;
+  bottom: 10px;
+  text-align: center;
+}
+
+.iconimage img .iconimage_selected {
+  width: 30px;
+  height: 30px;
+}
+
+.iconlabel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 15px;
+  text-align: center;
+  font-size: 10px;
+  color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.iconlabel_selected {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 15px;
+  text-align: center;
+  font-size: 10px;
+  color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: rgb(11, 97, 255);
+}
+.iconimage_selected {
+  position: absolute;
+  top: 25px;
+  left: 5px;
+  right: 5px;
+  bottom: 10px;
+  text-align: center;
+  filter: drop-shadow(0 0 blue);
+  opacity: 0.8;
+}
+
+.icon_overlay {
+  z-index: 0;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  background-color: rgba(0, 0, 255, 0.3);
+  border-radius: 3px;
+}

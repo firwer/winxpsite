@@ -4,6 +4,11 @@ import StartBar from "components/StartBar/StartBar";
 import "xp.css/dist/XP.css";
 import WinForm from "components/WinForm/WinForm";
 import styles from "../styles/Home.module.css";
+import DesktopIcon from "components/DesktopIcon/DesktopIcon";
+import internet from "../../assets/internet.png";
+import bin from "../../assets/recycling_bin.png";
+//import folder from "../../asset/folder.png";
+//import image from "../../asset/image.png";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -16,6 +21,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
+        <DesktopIcon title="My Computer" img={internet} />
+        <DesktopIcon title="Recycling Bin" img={bin} />
         <WinForm title="Welcome!" width="500" body="To my portfolio website" />
       </main>
       <StartBar />
