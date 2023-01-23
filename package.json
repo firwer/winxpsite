@@ -15,10 +15,12 @@
     "@types/react-dom": "18.0.10",
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.4",
+    "husky": "^8.0.3",
     "next": "13.1.4",
+    "prettier": "^2.8.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-windows-xp": "^0.7.1",
-    "typescript": "4.9.4"
+    "typescript": "4.9.4",
+    "xp.css": "^0.2.6"
   }
 }
