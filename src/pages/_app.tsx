@@ -1,6 +1,26 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import "@/styles/globals.css";
+import type { AppProps } from "next/app";
+import localFont from "@next/font/local";
+
+const Tahoma = localFont({
+  src: [
+    {
+      path: "../../fonts/Tahoma Bold V1.woff",
+      weight: "700",
+      style: "bold",
+    },
+    {
+      path: "../../fonts/Tahoma V1.woff",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+});
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <main className={Tahoma.className}>
+      <Component {...pageProps} />
+    </main>
+  );
 }
