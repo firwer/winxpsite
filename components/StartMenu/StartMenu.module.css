@@ -1,0 +1,15 @@
+.startmenu {
+  position: absolute;
+  left: 0px;
+  bottom: 30px;
+  width: 25%;
+  height: 500px;
+  z-index: -1;
+  display: flex;
+  background-color: rgb(66, 130, 214);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgb(0 0 0 / 50%) 2px 4px 2px;
+}

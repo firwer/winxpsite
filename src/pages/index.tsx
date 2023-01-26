@@ -5,13 +5,20 @@ import "xp.css/dist/XP.css";
 import WinForm from "components/WinForm/WinForm";
 import styles from "../styles/Home.module.css";
 import DesktopIcon from "components/DesktopIcon/DesktopIcon";
-import internet from "../../assets/internet.png";
+import mycomputer from "../../assets/mycomputer.png";
 import bin from "../../assets/recycling_bin.png";
-//import folder from "../../asset/folder.png";
-//import image from "../../asset/image.png";
+import clipboard from "../../assets/clipboard.png";
+import github from "../../assets/github.png";
+import cmd from "../../assets/cmd.png";
+import solitare from "../../assets/solitaire.png";
+import linkedin from "../../assets/linkedin.png";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const iconClicked = () => {
+    console.log("Icon Clicked!");
+  };
+
   return (
     <>
       <Head>
@@ -21,11 +28,40 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <DesktopIcon title="My Computer" img={internet} />
-        <DesktopIcon title="Recycling Bin" img={bin} />
-        <WinForm title="Welcome!" width="500" body="To my portfolio website" />
+        <DesktopIcon
+          doubleClick={iconClicked}
+          title="My Computer"
+          img={mycomputer}
+        />
+        <DesktopIcon
+          doubleClick={iconClicked}
+          title="Recycling Bin"
+          img={bin}
+        />
+        <DesktopIcon
+          doubleClick={iconClicked}
+          title="My Resume"
+          img={clipboard}
+        />
+        <DesktopIcon
+          doubleClick={iconClicked}
+          title="My Hobbies"
+          img={solitare}
+        />
+        <DesktopIcon doubleClick={iconClicked} title="My Github" img={github} />
+        <DesktopIcon doubleClick={iconClicked} title="My Work" img={cmd} />
+        <DesktopIcon
+          doubleClick={iconClicked}
+          title="My LinkedIn"
+          img={linkedin}
+        />
+        <WinForm
+          title="Welcome!"
+          width="500"
+          body="To my portfolio website, What brought you here today?"
+        />
+        <StartBar />
       </main>
-      <StartBar />
     </>
   );
 }
