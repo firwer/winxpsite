@@ -1,0 +1,25 @@
+.Item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 7px 3px 3px 3px;
+}
+
+.TextTHREE {
+  color: rgb(0, 19, 107);
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.rightIcon {
+  size: 22px;
+  margin-right: 4px;
+}
+
+.menu_arrow {
+  border-left-color: rgb(255, 255, 255);
+  border: 3.5px solid transparent;
+  border-right: 0;
+  border-left-color: #00136b;
+  margin-left: 25px;
+}
