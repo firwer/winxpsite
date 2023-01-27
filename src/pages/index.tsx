@@ -7,7 +7,7 @@ import styles from "../styles/Home.module.css";
 import DesktopIcon from "components/DesktopIcon/DesktopIcon";
 import mycomputer from "../../assets/mycomputer.png";
 import bin from "../../assets/recycling_bin.png";
-import clipboard from "../../assets/clipboard.png";
+import pdf from "../../assets/pdf.png";
 import github from "../../assets/github.png";
 import cmd from "../../assets/cmd.png";
 import solitare from "../../assets/solitaire.png";
@@ -38,11 +38,7 @@ export default function Home() {
           title="Recycling Bin"
           img={bin}
         />
-        <DesktopIcon
-          doubleClick={iconClicked}
-          title="My Resume"
-          img={clipboard}
-        />
+        <DesktopIcon doubleClick={iconClicked} title="My Resume" img={pdf} />
         <DesktopIcon
           doubleClick={iconClicked}
           title="My Hobbies"

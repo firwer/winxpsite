@@ -11,7 +11,7 @@
 
 .iconimage {
   position: absolute;
-  top: 25px;
+  top: 18px;
   left: 5px;
   right: 5px;
   bottom: 10px;
@@ -19,8 +19,8 @@
 }
 
 .iconimage img .iconimage_selected {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
 }
 
 .iconlabel {
@@ -30,7 +30,7 @@
   right: 0;
   height: 15px;
   text-align: center;
-  font-size: 10px;
+  font-size: 12px;
   color: white;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -44,7 +44,7 @@
   right: 0;
   height: 15px;
   text-align: center;
-  font-size: 10px;
+  font-size: 12px;
   color: white;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -53,7 +53,7 @@
 }
 .iconimage_selected {
   position: absolute;
-  top: 25px;
+  top: 18px;
   left: 5px;
   right: 5px;
   bottom: 10px;
