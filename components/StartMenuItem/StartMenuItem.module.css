@@ -1,8 +1,27 @@
 .Item {
   display: flex;
   flex-direction: row;
+  height: 40px;
   align-items: center;
-  margin: 7px 3px 3px 3px;
+  margin: 0px 3px 0px 1px;
+}
+.Item:hover {
+  background-color: #2f71cd;
+}
+
+.Item:hover p {
+  color: white;
+  background-color: #2f71cd;
+  cursor: default;
+}
+
+.subtitleONE {
+  color: #919191;
+  font-size: 12;
+}
+.TextONE {
+  color: black;
+  font-weight: 700;
 }
 
 .TextTHREE {
@@ -11,8 +30,18 @@
   font-size: 12px;
 }
 
+.TextFOUR {
+  color: rgb(0, 19, 107);
+}
+
 .rightIcon {
-  size: 22px;
+  height: 32px;
+  margin-right: 4px;
+}
+
+.leftIcon {
+  height: 32px;
+  margin-left: 8px;
   margin-right: 4px;
 }
 
