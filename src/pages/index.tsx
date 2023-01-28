@@ -18,7 +18,17 @@ export default function Home() {
   const iconClicked = () => {
     console.log("Icon Clicked!");
   };
+  const handleOpenGitHub = () => {
+    window.open("https://github.com/firwer", "_blank", "noreferrer");
+  };
 
+  const handleOpenLinkedin = () => {
+    window.open(
+      "https://www.linkedin.com/in/poh-wei-pin-7b9061183/",
+      "_blank",
+      "noreferrer"
+    );
+  };
   return (
     <>
       <Head>
@@ -44,18 +54,64 @@ export default function Home() {
           title="My Hobbies"
           img={solitare}
         />
-        <DesktopIcon doubleClick={iconClicked} title="My Github" img={github} />
+        <DesktopIcon
+          doubleClick={handleOpenGitHub}
+          title="My Github"
+          img={github}
+        />
         <DesktopIcon doubleClick={iconClicked} title="My Work" img={cmd} />
         <DesktopIcon
-          doubleClick={iconClicked}
+          doubleClick={handleOpenLinkedin}
           title="My LinkedIn"
           img={linkedin}
         />
-        <WinForm
-          title="Welcome!"
-          width="500"
-          body="To my portfolio website, What brought you here today?"
-        />
+        <WinForm title="Welcome!" width="500">
+          <h3>How to Navigate?</h3>
+          <menu role="tablist">
+            <button aria-selected="true" aria-controls="music">
+              Music
+            </button>
+            <button aria-controls="dogs">Dogs</button>
+            <button aria-controls="food">Food</button>
+          </menu>
+          <article role="tabpanel" id="music">
+            <p>Set your listening preferences</p>
+            <fieldset>
+              <legend>Today's mood</legend>
+              <div className="field-row">
+                <input id="radio29" type="radio" name="fieldset-example2" />
+                <label htmlFor="radio29">Nicki Minaj</label>
+              </div>
+              <div className="field-row">
+                <input id="radio30" type="radio" name="fieldset-example2" />
+                <label htmlFor="radio30">Bell Towers</label>
+              </div>
+              <div className="field-row">
+                <input id="radio31" type="radio" name="fieldset-example2" />
+                <label htmlFor="radio31">The Glamorous Monique</label>
+              </div>
+              <div className="field-row">
+                <input id="radio32" type="radio" name="fieldset-example2" />
+                <label htmlFor="radio32">EN. V</label>
+              </div>
+            </fieldset>
+            <section className="field-row">
+              <button>Reset Alarm...</button>
+              <label>Try this to get some attention</label>
+            </section>
+          </article>
+
+          <article role="tabpanel" hidden id="dogs">
+            <p>OK</p>
+          </article>
+
+          <article role="tabpanel" hidden id="food">
+            <p>
+              You create the content for each tab by using an{" "}
+              <code>article</code> tag.
+            </p>
+          </article>
+        </WinForm>
         <StartBar />
       </main>
     </>

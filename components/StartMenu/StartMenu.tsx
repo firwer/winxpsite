@@ -23,6 +23,23 @@ import logoff from "../../assets/logoff.png";
 import shutdown from "../../assets/shutdown.png";
 import defaultprog from "../../assets/defaultprog.png";
 import printerfax from "../../assets/printerfax.png";
+const handleOpenGitHub = () => {
+  window.open("https://github.com/firwer", "_blank", "noreferrer");
+};
+
+const handleOpenResume = () => {
+  const pdfUrl = "./Resume.pdf";
+  window.open(pdfUrl, "_blank");
+};
+
+const handleOpenLinkedin = () => {
+  window.open(
+    "https://www.linkedin.com/in/poh-wei-pin-7b9061183/",
+    "_blank",
+    "noreferrer"
+  );
+};
+
 const StartMenu = () => {
   return (
     <div className={styles.startmenu}>
@@ -69,9 +86,24 @@ const StartMenu = () => {
               type={1}
             />
             <hr className={styles.greyhr} />
-            <StartMenuItem title="My Resume" icon={pdf} type={2} />
-            <StartMenuItem title="My Github" icon={github} type={2} />
-            <StartMenuItem title="My Linkedin" icon={linkedin} type={2} />
+            <StartMenuItem
+              onClick={handleOpenResume}
+              title="My Resume"
+              icon={pdf}
+              type={2}
+            />
+            <StartMenuItem
+              onClick={handleOpenGitHub}
+              title="My Github"
+              icon={github}
+              type={2}
+            />
+            <StartMenuItem
+              onClick={handleOpenLinkedin}
+              title="My Linkedin"
+              icon={linkedin}
+              type={2}
+            />
             <StartMenuItem title="My Work" icon={cmd} type={2} />
             <StartMenuItem title="My Blog & Thoughts" icon={msn} type={2} />
             <StartMenuItem title="Paint" icon={paint} type={2} />

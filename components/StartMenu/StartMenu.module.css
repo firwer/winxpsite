@@ -148,6 +148,7 @@
   font-weight: 700;
   height: 30px;
   margin: 3px;
+  cursor: default;
 }
 
 .allprograms:hover {

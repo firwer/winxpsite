@@ -1,6 +1,6 @@
 import Draggable from "react-draggable";
 
-const WinForm = (props: { title: string; width: string; body: string }) => {
+const WinForm = (props: { title: string; width: string; children: any }) => {
   return (
     <Draggable bounds="parent">
       <div
@@ -15,10 +15,7 @@ const WinForm = (props: { title: string; width: string; body: string }) => {
             <button aria-label="Close"></button>
           </div>
         </div>
-        <div className="window-body">
-          <progress max="100" value="30"></progress>
-          <p>{props.body}</p>
-        </div>
+        <div className="window-body">{props.children}</div>
       </div>
     </Draggable>
   );
