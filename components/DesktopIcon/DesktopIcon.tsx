@@ -6,6 +6,7 @@ import styles from "./DesktopIcon.module.css";
 const DesktopIcon = (props: {
   title: string;
   img: StaticImageData;
+  id: number;
   doubleClick: any;
 }) => {
   const [selected, setSelected] = useState(false);
@@ -30,6 +31,7 @@ const DesktopIcon = (props: {
   return (
     <Draggable bounds="parent">
       <div
+        style={{ top: props.id * 90 - 40 }}
         onDoubleClick={props.doubleClick}
         onClick={HighlightIcon}
         className={styles.icon}
@@ -39,7 +41,11 @@ const DesktopIcon = (props: {
           <div
             className={selected ? styles.iconimage_selected : styles.iconimage}
           >
-            <img style={{ height: "45px" }} src={props.img.src} alt="icon" />
+            <img
+              style={{ height: "45px", maxHeight: "45px", maxWidth: "100%" }}
+              src={props.img.src}
+              alt="icon"
+            />
           </div>
         </div>
         <div

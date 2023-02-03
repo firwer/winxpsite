@@ -44,35 +44,47 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <DesktopIcon
+          id={1}
           doubleClick={iconClicked}
           title="My Computer"
           img={mycomputer}
         />
         <DesktopIcon
+          id={2}
           doubleClick={iconClicked}
           title="Recycling Bin"
           img={bin}
         />
         <DesktopIcon
+          id={3}
           doubleClick={handleOpenResume}
           title="My Resume"
           img={pdf}
         />
         <DesktopIcon
-          doubleClick={iconClicked}
-          title="My Hobbies"
-          img={solitare}
+          id={4}
+          doubleClick={handleOpenLinkedin}
+          title="My LinkedIn"
+          img={linkedin}
         />
         <DesktopIcon
+          id={5}
           doubleClick={handleOpenGitHub}
           title="My Github"
           img={github}
         />
-        <DesktopIcon doubleClick={iconClicked} title="My Work" img={cmd} />
         <DesktopIcon
-          doubleClick={handleOpenLinkedin}
-          title="My LinkedIn"
-          img={linkedin}
+          id={6}
+          doubleClick={iconClicked}
+          title="My Work"
+          img={cmd}
+        />
+
+        <DesktopIcon
+          id={7}
+          doubleClick={iconClicked}
+          title="My Hobbies"
+          img={solitare}
         />
         {/* <ErrorForm
           title={"Error!"}
