@@ -2,7 +2,6 @@ import Head from "next/head";
 import { Inter } from "@next/font/google";
 import StartBar from "components/StartBar/StartBar";
 import "xp.css/dist/XP.css";
-import WinForm from "components/WinForm/WinForm";
 import styles from "../styles/Home.module.css";
 import DesktopIcon from "components/DesktopIcon/DesktopIcon";
 import mycomputer from "../../assets/mycomputer.png";
@@ -12,6 +11,8 @@ import github from "../../assets/github.png";
 import cmd from "../../assets/cmd.png";
 import solitare from "../../assets/solitaire.png";
 import linkedin from "../../assets/linkedin.png";
+import ErrorForm from "components/ErrorForm/ErrorForm";
+import WinForm from "components/WinForm/WinForm";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -28,6 +29,10 @@ export default function Home() {
       "_blank",
       "noreferrer"
     );
+  };
+
+  const handleOpenResume = () => {
+    window.open("/resume.pdf");
   };
   return (
     <>
@@ -48,7 +53,11 @@ export default function Home() {
           title="Recycling Bin"
           img={bin}
         />
-        <DesktopIcon doubleClick={iconClicked} title="My Resume" img={pdf} />
+        <DesktopIcon
+          doubleClick={handleOpenResume}
+          title="My Resume"
+          img={pdf}
+        />
         <DesktopIcon
           doubleClick={iconClicked}
           title="My Hobbies"
@@ -65,52 +74,13 @@ export default function Home() {
           title="My LinkedIn"
           img={linkedin}
         />
-        <WinForm title="Welcome!" width="500">
-          <h3>How to Navigate?</h3>
-          <menu role="tablist">
-            <button aria-selected="true" aria-controls="music">
-              Music
-            </button>
-            <button aria-controls="dogs">Dogs</button>
-            <button aria-controls="food">Food</button>
-          </menu>
-          <article role="tabpanel" id="music">
-            <p>Set your listening preferences</p>
-            <fieldset>
-              <legend>Today's mood</legend>
-              <div className="field-row">
-                <input id="radio29" type="radio" name="fieldset-example2" />
-                <label htmlFor="radio29">Nicki Minaj</label>
-              </div>
-              <div className="field-row">
-                <input id="radio30" type="radio" name="fieldset-example2" />
-                <label htmlFor="radio30">Bell Towers</label>
-              </div>
-              <div className="field-row">
-                <input id="radio31" type="radio" name="fieldset-example2" />
-                <label htmlFor="radio31">The Glamorous Monique</label>
-              </div>
-              <div className="field-row">
-                <input id="radio32" type="radio" name="fieldset-example2" />
-                <label htmlFor="radio32">EN. V</label>
-              </div>
-            </fieldset>
-            <section className="field-row">
-              <button>Reset Alarm...</button>
-              <label>Try this to get some attention</label>
-            </section>
-          </article>
-
-          <article role="tabpanel" hidden id="dogs">
-            <p>OK</p>
-          </article>
-
-          <article role="tabpanel" hidden id="food">
-            <p>
-              You create the content for each tab by using an{" "}
-              <code>article</code> tag.
-            </p>
-          </article>
+        {/* <ErrorForm
+          title={"Error!"}
+          width={""}
+          body="This is an error message Access is denied"
+        /> */}
+        <WinForm title={"My Work"} width={"500"}>
+          Hi
         </WinForm>
         <StartBar />
       </main>

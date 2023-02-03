@@ -28,8 +28,7 @@ const handleOpenGitHub = () => {
 };
 
 const handleOpenResume = () => {
-  const pdfUrl = "./Resume.pdf";
-  window.open(pdfUrl, "_blank");
+  window.open("/resume.pdf", "_blank");
 };
 
 const handleOpenLinkedin = () => {

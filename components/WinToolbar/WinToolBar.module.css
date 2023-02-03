@@ -1,0 +1,35 @@
+.topwindowsbar {
+  display: flex;
+  height: 35px;
+  flex-direction: row;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.winlogo {
+  background: url(../../assets/winlogo.png) no-repeat center;
+  background-size: cover;
+  width: 60px;
+  height: 98%;
+  margin-right: 1px;
+}
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+  background-color: #ede9d3;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 2px;
+}
+
+.toolbaritem {
+  cursor: default;
+  font-size: 14px;
+  padding: 6px;
+}
+
+.toolbaritem:hover {
+  background-color: rgb(22, 96, 232);
+  color: white;
+}

@@ -1,0 +1,119 @@
+.window {
+  height: 500px;
+  width: 500px;
+}
+
+.titlebar {
+  display: flex;
+  height: 30px;
+  flex-direction: row;
+  justify-content: center;
+  background: linear-gradient(
+    rgb(0, 88, 238) 0%,
+    rgb(53, 147, 255) 4%,
+    rgb(40, 142, 255) 6%,
+    rgb(18, 125, 255) 8%,
+    rgb(3, 111, 252) 10%,
+    rgb(2, 98, 238) 14%,
+    rgb(0, 87, 229) 20%,
+    rgb(0, 84, 227) 24%,
+    rgb(0, 85, 235) 56%,
+    rgb(0, 91, 245) 66%,
+    rgb(2, 106, 254) 76%,
+    rgb(0, 98, 239) 86%,
+    rgb(0, 82, 214) 92%,
+    rgb(0, 64, 171) 94%,
+    rgb(0, 48, 146) 100%
+  );
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.windowborder {
+  display: flex;
+  background-color: rgb(8, 49, 217);
+  padding: 0 4px 4px 4px;
+  height: 400px;
+}
+
+.windowsbody {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+}
+
+.titlebar {
+  background-color: #5c5c5c;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 35px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 700;
+  text-shadow: rgb(0 0 0) 1px 1px;
+  margin-left: 10px;
+}
+
+.titlecontrols {
+  display: flex;
+  align-items: center;
+}
+
+.minimise {
+  background: url(../../assets/minimise.png) no-repeat center;
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+  margin-right: 1px;
+}
+
+.minimise:hover {
+  background: url(../../assets/minimise_hover.png) no-repeat center;
+  background-size: cover;
+}
+
+.minimise:active {
+  opacity: 0.85;
+  filter: brightness(80%);
+}
+
+.maximise {
+  background: url(../../assets/maximise.png) no-repeat center;
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+  margin-right: 1px;
+}
+.maximise:active {
+  opacity: 0.85;
+  filter: brightness(80%);
+}
+
+.maximise:hover {
+  background: url(../../assets/maximise_hover.png) no-repeat center;
+  background-size: cover;
+}
+
+.close {
+  background: url(../../assets/close.png) no-repeat center;
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+  margin-right: 4px;
+}
+
+.close:hover {
+  background: url(../../assets/close_hover.png) no-repeat center;
+  background-size: cover;
+}
+
+.close:active {
+  opacity: 0.85;
+  filter: brightness(80%);
+}
