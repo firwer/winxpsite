@@ -24,8 +24,15 @@ const getTime = () => {
   return `${hour}:${min} ${hourPostFix}`;
 };
 
+const TrayItem = {
+  appName: String,
+  isMinimized: Boolean,
+  isClosed: Boolean,
+};
+
 const StartBar = () => {
   const [time, setTime] = useState(getTime);
+  const [startTray, setStartTray] = useState(TrayItem);
   const ref = useRef<HTMLDivElement>(null);
   const [startMenuOpen, setStartMenuOpen] = useState(false);
   const handleOpenStartMenu = () => {

@@ -91,7 +91,7 @@ export default function Home() {
           width={""}
           body="This is an error message Access is denied"
         /> */}
-        <WinForm title={"My Work"} width={"500"}>
+        <WinForm title={"My Work"} width={"500"} >
           Hi
         </WinForm>
         <StartBar />

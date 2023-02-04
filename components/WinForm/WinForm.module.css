@@ -1,5 +1,5 @@
 .window {
-  height: 500px;
+  height: 400px;
   width: 500px;
 }
 
@@ -33,7 +33,7 @@
   display: flex;
   background-color: rgb(8, 49, 217);
   padding: 0 4px 4px 4px;
-  height: 400px;
+  height: 100%;
 }
 
 .windowsbody {
@@ -54,6 +54,8 @@
 }
 
 .title {
+  cursor: default;
+  align-items: center;
   font-size: 14px;
   font-weight: 700;
   text-shadow: rgb(0 0 0) 1px 1px;
