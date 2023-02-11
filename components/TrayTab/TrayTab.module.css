@@ -1,15 +1,39 @@
 .tab_container {
+  text-overflow: ellipsis;
+  position: relative;
   display: flex;
+  flex: 2 2 0%;
   flex-direction: row;
   align-items: center;
+  margin-top: 2px;
   background-color: rgb(60, 129, 243);
   box-shadow: rgb(0 0 0 / 30%) -1px 0px inset,
     rgb(255 255 255 / 20%) 1px 1px 1px inset;
   max-width: 200px;
-  width: 150px;
   height: 80%;
   cursor: default;
   border-radius: 2px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.tab_container_focused {
+  text-overflow: ellipsis;
+  position: relative;
+  display: flex;
+  flex: 2 2 0%;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 2px;
+  background-color: rgb(30, 82, 183);
+  box-shadow: rgb(0 0 0 / 20%) 0px 0px 1px 1px inset,
+    rgb(0 0 0 / 70%) 1px 0px 1px inset;
+  max-width: 200px;
+  height: 80%;
+  cursor: default;
+  border-radius: 2px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .tab_container:hover {
@@ -23,7 +47,15 @@
 }
 
 .tab_text {
-  font-size: 14px;
-
   color: white;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tab_icon {
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
 }

@@ -1,10 +1,23 @@
 import styles from "./TrayTab.module.css";
+import { StaticImageData } from "next/image";
+import { useState } from "react";
+interface props {
+  title: String;
+  Icon: StaticImageData;
+  onFocus: () => void;
+  isFocused: Boolean;
+}
 
-const TrayTab = () => {
+const TrayTab = ({ Icon, title, onFocus, isFocused }: props) => {
   return (
-    <div className={styles.tab_container}>
-      <div className={styles.tab_icon}></div>
-      <div className={styles.tab_text}>asdasd</div>
+    <div
+      onClick={onFocus}
+      className={
+        isFocused ? styles.tab_container_focused : styles.tab_container
+      }
+    >
+      <img className={styles.tab_icon} src={Icon.src} />
+      <div className={styles.tab_text}>{title}</div>
     </div>
   );
 };
