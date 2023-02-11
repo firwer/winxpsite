@@ -85,6 +85,24 @@
   filter: brightness(80%);
 }
 
+.resize {
+  background: url(../../assets/resize.png) no-repeat center;
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+  margin-right: 1px;
+}
+
+.resize:hover {
+  background: url(../../assets/resize_hover.png) no-repeat center;
+  background-size: cover;
+}
+
+.resize:active {
+  opacity: 0.85;
+  filter: brightness(80%);
+}
+
 .maximise {
   background: url(../../assets/maximise.png) no-repeat center;
   background-size: cover;

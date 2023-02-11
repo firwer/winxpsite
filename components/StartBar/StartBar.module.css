@@ -5,7 +5,7 @@
   bottom: 0;
   right: 0;
   left: 0;
-  height: 30px;
+  height: 35px;
   width: 100%;
   z-index: 0;
   background: linear-gradient(
@@ -30,8 +30,10 @@
 
 .startbtn {
   background-image: url("../../assets/xp_btn_norm.png");
-  width: 97px;
-  height: 30px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 120px;
+  height: 35px;
   outline: none;
 }
 
@@ -48,9 +50,12 @@
 }
 
 .tabbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   z-index: 4;
-  width: 30px;
-  height: 30px;
+  width: 80%;
+  height: 100%;
 }
 
 .icontray {

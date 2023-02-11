@@ -9,7 +9,6 @@ const WinForm = (props: {
   // isMinimized: boolean;
   // isClose: boolean;
 }) => {
-  console.log("rendering WinForm");
   const [isMaximized, setMaximised] = useState(false);
   const [isMinimized, setMinimised] = useState(false);
   const [isClose, setClose] = useState(false);
@@ -71,7 +70,10 @@ const WinForm = (props: {
           </div>
           <div className={styles.titlecontrols}>
             <div onClick={handleMinimize} className={styles.minimise} />
-            <div onClick={handleMaximize} className={styles.maximise} />
+            <div
+              onClick={handleMaximize}
+              className={isMaximized ? styles.resize : styles.maximise}
+            />
             <div onClick={handleClose} className={styles.close} />
           </div>
         </div>

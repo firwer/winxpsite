@@ -5,6 +5,7 @@ import internet from "../../assets/internet.png";
 import sound from "../../assets/sound.png";
 import removabledevice from "../../assets/removabledevice.png";
 import StartMenu from "components/StartMenu/StartMenu";
+import TrayTab from "components/TrayTab/TrayTab";
 
 const getTime = () => {
   const date = new Date();
@@ -68,7 +69,9 @@ const StartBar = () => {
           <div onClick={handleOpenStartMenu} className={styles.startbtn}></div>
           {startMenuOpen && <StartMenu />}
         </div>
-        <div className={styles.tabbar}></div>
+        <div className={styles.tabbar}>
+          <TrayTab />
+        </div>
         <div className={styles.icontray}>
           <div className={styles.iconrow}>
             <div className={styles.icon}>

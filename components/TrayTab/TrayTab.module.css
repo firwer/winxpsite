@@ -1,0 +1,29 @@
+.tab_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgb(60, 129, 243);
+  box-shadow: rgb(0 0 0 / 30%) -1px 0px inset,
+    rgb(255 255 255 / 20%) 1px 1px 1px inset;
+  max-width: 200px;
+  width: 150px;
+  height: 80%;
+  cursor: default;
+  border-radius: 2px;
+}
+
+.tab_container:hover {
+  filter: brightness(120%);
+}
+
+.tab_container:active {
+  background-color: rgb(30, 82, 183);
+  box-shadow: rgb(0 0 0 / 20%) 0px 0px 1px 1px inset,
+    rgb(0 0 0 / 70%) 1px 0px 1px inset;
+}
+
+.tab_text {
+  font-size: 14px;
+
+  color: white;
+}
