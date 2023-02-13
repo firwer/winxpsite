@@ -36,6 +36,10 @@
   white-space: nowrap;
 }
 
+.tab_container_focused:hover {
+  filter: brightness(120%);
+}
+
 .tab_container:hover {
   filter: brightness(120%);
 }
@@ -57,5 +61,5 @@
 .tab_icon {
   width: 20px;
   height: 20px;
-  margin: 0 5px;
+  margin: 0 10px;
 }

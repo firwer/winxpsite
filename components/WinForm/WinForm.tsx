@@ -14,7 +14,6 @@ const WinForm = (props: {
   const [isClose, setClose] = useState(false);
   const [currX, setX] = useState(0);
   const [currY, setY] = useState(0);
-  const componentRef = useRef<HTMLDivElement>(null);
   const handleMaximize = () => {
     setMaximised(!isMaximized);
   };

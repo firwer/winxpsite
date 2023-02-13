@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useImperativeHandle, useRef, useState } from "react";
 import styles from "./StartBar.module.css";
 import greenshield from "../../assets/green_shield.png";
 import internet from "../../assets/internet.png";
@@ -9,17 +9,14 @@ import TrayTab from "components/TrayTab/TrayTab";
 import cmd from "../../assets/cmd.png";
 import mycomputer from "../../assets/mycomputer.png";
 import { StaticImageData } from "next/image";
-
-type Tab = {
-  title: string;
-  Icon: StaticImageData;
-};
+import React from "react";
+import { Tab } from "src/types";
+import { AppDirectory } from "@/appID";
 
 const TestTabs: Array<Tab> = [
   { title: "My Work", Icon: cmd },
   { title: "My Computer", Icon: mycomputer },
   { title: "My Documents", Icon: cmd },
-  { title: "My Network Places", Icon: cmd },
 ];
 
 const getTime = () => {
@@ -40,18 +37,24 @@ const getTime = () => {
   return `${hour}:${min} ${hourPostFix}`;
 };
 
-const TrayItem = {
-  appName: String,
-  isMinimized: Boolean,
-  isClosed: Boolean,
-};
+interface props {
+  tabList: number[];
+}
 
-const StartBar = () => {
+const StartBar = ({ tabList }: props) => {
   const [time, setTime] = useState(getTime);
   const ref = useRef<HTMLDivElement>(null);
   const [startMenuOpen, setStartMenuOpen] = useState(false);
   const [focusedTab, setFocusedTab] = useState<number | null>(null);
-  const [trayItems, setTrayItems] = useState([]);
+  const [Tabs, setTabs] = useState<Tab[]>([]);
+
+  useEffect(() => {
+    console.log("Tabs", Tabs);
+    if (AppDirectory.get(tabList[tabList.length - 1]) !== undefined) {
+      const newTab = AppDirectory.get(tabList[tabList.length - 1]) as Tab;
+      setTabs([...Tabs, newTab]);
+    }
+  }, [tabList]);
 
   const handleTabFocus = (tabName: number) => {
     if (focusedTab === tabName) {
@@ -64,6 +67,7 @@ const StartBar = () => {
   const renderTabs = (title: String, Icon: StaticImageData, index: number) => {
     return (
       <TrayTab
+        key={index}
         title={title}
         Icon={Icon}
         isFocused={index === focusedTab}
@@ -106,7 +110,7 @@ const StartBar = () => {
           {startMenuOpen && <StartMenu />}
         </div>
         <div className={styles.tabbar}>
-          {TestTabs.map((_item, index) =>
+          {Tabs.map((_item, index) =>
             renderTabs(_item.title, _item.Icon, index)
           )}
         </div>

@@ -1,11 +1,14 @@
+import { useRef } from "react";
 import Draggable from "react-draggable";
 import errorIcon from "../../assets/error.png";
 const ErrorForm = (props: { title: string; width: string; body: String }) => {
+  const nodeRef = useRef(null);
   return (
-    <Draggable bounds="parent">
+    <Draggable ref={nodeRef} bounds="parent">
       <div
         className="window"
         style={{ width: props.width + "px", zIndex: "1" }}
+        ref={nodeRef}
       >
         <div className="title-bar">
           <div className="title-bar-text">{props.title}</div>

@@ -11,11 +11,16 @@ import github from "../../assets/github.png";
 import cmd from "../../assets/cmd.png";
 import solitare from "../../assets/solitaire.png";
 import linkedin from "../../assets/linkedin.png";
-import ErrorForm from "components/ErrorForm/ErrorForm";
 import WinForm from "components/WinForm/WinForm";
-const inter = Inter({ subsets: ["latin"] });
-
+import { useCallback, useState } from "react";
+import { Tab } from "src/types";
 export default function Home() {
+  const [TabsID, setTabsID] = useState([] as number[]);
+
+  const handleRunApp = (appID: number) => {
+    setTabsID((prevTabs) => [...prevTabs, appID]);
+  };
+
   const iconClicked = () => {
     console.log("Icon Clicked!");
   };
@@ -34,6 +39,7 @@ export default function Home() {
   const handleOpenResume = () => {
     window.open("/resume.pdf");
   };
+
   return (
     <>
       <Head>
@@ -44,57 +50,52 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <DesktopIcon
-          id={1}
+          appID={1}
           doubleClick={iconClicked}
           title="My Computer"
           img={mycomputer}
         />
         <DesktopIcon
-          id={2}
+          appID={2}
           doubleClick={iconClicked}
           title="Recycling Bin"
           img={bin}
         />
         <DesktopIcon
-          id={3}
+          appID={3}
           doubleClick={handleOpenResume}
           title="My Resume"
           img={pdf}
         />
         <DesktopIcon
-          id={4}
+          appID={4}
           doubleClick={handleOpenLinkedin}
           title="My LinkedIn"
           img={linkedin}
         />
         <DesktopIcon
-          id={5}
+          appID={5}
           doubleClick={handleOpenGitHub}
           title="My Github"
           img={github}
         />
         <DesktopIcon
-          id={6}
-          doubleClick={iconClicked}
+          appID={6}
+          doubleClick={() => handleRunApp(6)}
           title="My Work"
           img={cmd}
         />
 
         <DesktopIcon
-          id={7}
+          appID={7}
           doubleClick={iconClicked}
           title="My Hobbies"
           img={solitare}
         />
-        {/* <ErrorForm
-          title={"Error!"}
-          width={""}
-          body="This is an error message Access is denied"
-        /> */}
-        <WinForm title={"My Work"} width={"500"} >
+        <WinForm title={"My Work"} width={"500"}>
           Hi
         </WinForm>
-        <StartBar />
+        <StartBar tabList={TabsID} />
       </main>
     </>
   );

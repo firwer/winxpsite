@@ -1,6 +1,5 @@
 import styles from "./TrayTab.module.css";
 import { StaticImageData } from "next/image";
-import { useState } from "react";
 interface props {
   title: String;
   Icon: StaticImageData;
