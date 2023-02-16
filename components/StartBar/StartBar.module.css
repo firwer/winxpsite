@@ -37,6 +37,15 @@
   outline: none;
 }
 
+.startbtn_active {
+  background-image: url("../../assets/xp_btn_clicked.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 120px;
+  height: 35px;
+  outline: none;
+}
+
 .startbtn:hover {
   background-image: url("../../assets/xp_btn_hover.png");
 }

@@ -23,23 +23,38 @@ import logoff from "../../assets/logoff.png";
 import shutdown from "../../assets/shutdown.png";
 import defaultprog from "../../assets/defaultprog.png";
 import printerfax from "../../assets/printerfax.png";
-const handleOpenGitHub = () => {
-  window.open("https://github.com/firwer", "_blank", "noreferrer");
-};
+import { AppDirectory } from "@/appID";
+import { addTab } from "@/redux/tabSlice";
+import { Tab } from "@/types";
+import store from "@/redux/store";
 
-const handleOpenResume = () => {
-  window.open("/resume.pdf", "_blank");
-};
+interface StartMenuProps {
+  menuControl: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-const handleOpenLinkedin = () => {
-  window.open(
-    "https://www.linkedin.com/in/poh-wei-pin-7b9061183/",
-    "_blank",
-    "noreferrer"
-  );
-};
+const StartMenu = ({ menuControl }: StartMenuProps) => {
+  const handleOpenGitHub = () => {
+    window.open("https://github.com/firwer", "_blank", "noreferrer");
+  };
 
-const StartMenu = () => {
+  const handleOpenResume = () => {
+    window.open("/resume.pdf", "_blank");
+  };
+
+  const handleOpenLinkedin = () => {
+    window.open(
+      "https://www.linkedin.com/in/poh-wei-pin-7b9061183/",
+      "_blank",
+      "noreferrer"
+    );
+  };
+
+  const handleRunApp = (e: number) => {
+    menuControl(false);
+    const newTab = AppDirectory.get(e) as Tab;
+    console.log("Calling App: " + newTab.title);
+    store.dispatch(addTab(newTab));
+  };
   return (
     <div className={styles.startmenu}>
       <hr className={styles.whitehr} />
@@ -103,7 +118,12 @@ const StartMenu = () => {
               icon={linkedin}
               type={2}
             />
-            <StartMenuItem title="My Work" icon={cmd} type={2} />
+            <StartMenuItem
+              title="My Work"
+              onClick={() => handleRunApp(6)}
+              icon={cmd}
+              type={2}
+            />
             <StartMenuItem title="My Blog & Thoughts" icon={msn} type={2} />
             <StartMenuItem title="Paint" icon={paint} type={2} />
           </div>

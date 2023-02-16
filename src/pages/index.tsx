@@ -12,13 +12,16 @@ import cmd from "../../assets/cmd.png";
 import solitare from "../../assets/solitaire.png";
 import linkedin from "../../assets/linkedin.png";
 import WinForm from "components/WinForm/WinForm";
-import { useCallback, useState } from "react";
-import { Tab } from "src/types";
+import { useState } from "react";
+import store from "@/redux/store";
+import { AppDirectory } from "@/appID";
+import { Tab } from "@/types";
+import { addTab } from "@/redux/tabSlice";
 export default function Home() {
-  const [TabsID, setTabsID] = useState([] as number[]);
-
-  const handleRunApp = (appID: number) => {
-    setTabsID((prevTabs) => [...prevTabs, appID]);
+  const handleRunApp = (e: number) => {
+    const newTab = AppDirectory.get(e) as Tab;
+    console.log("Calling App: " + newTab.title);
+    store.dispatch(addTab(newTab));
   };
 
   const iconClicked = () => {
@@ -95,7 +98,7 @@ export default function Home() {
         <WinForm title={"My Work"} width={"500"}>
           Hi
         </WinForm>
-        <StartBar tabList={TabsID} />
+        <StartBar />
       </main>
     </>
   );

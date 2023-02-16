@@ -2,8 +2,6 @@ import { StaticImageData } from "next/image";
 import internal from "stream";
 import styles from "./StartMenuItem.module.css";
 
-const renderSwitch = (type: Number) => {};
-
 const StartMenuItem = (props: {
   onClick?: any;
   title: string;

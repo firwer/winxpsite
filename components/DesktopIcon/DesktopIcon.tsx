@@ -1,5 +1,5 @@
 import { StaticImageData } from "next/image";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, ReactHTMLElement } from "react";
 import Draggable from "react-draggable";
 import styles from "./DesktopIcon.module.css";
 
