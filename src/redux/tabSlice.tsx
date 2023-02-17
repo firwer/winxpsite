@@ -5,14 +5,22 @@ import { createSlice } from "@reduxjs/toolkit";
 export const tabtraySlice = createSlice({
   name: "tab",
   initialState: {
-    tray: [AppDirectory.get(6), AppDirectory.get(3)] as Tab[],
+    tray: [] as Tab[],
+    id: 0,
   },
   reducers: {
     addTab: (state, action) => {
       state.tray.push(action.payload);
+      state.id = state.id + 1;
     },
     removeTab: (state, action) => {
-      state.tray = state.tray.filter((tab) => tab.id !== action.payload);
+      console.log("Previous: " + state.tray);
+      const index = state.tray.findIndex((tab) => tab.id === action.payload.id);
+      console.log("removing index: ", index);
+      state.tray = state.tray.filter((_, i) => {
+        return i !== index;
+      });
+      console.log("Current: " + state.tray);
     },
   },
 });

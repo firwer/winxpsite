@@ -45,10 +45,6 @@ const StartBar = () => {
   const [focusedTab, setFocusedTab] = useState<number | null>(null);
   const Tabs = useSelector((state: RootState) => state.tab.tray);
 
-  // useEffect(() => {
-  //   setStartMenuOpen
-  // }, [startMenuOpen]);
-
   const handleTabFocus = (tabName: number) => {
     if (focusedTab === tabName) {
       setFocusedTab(null);
@@ -103,10 +99,10 @@ const StartBar = () => {
             onClick={handleOpenStartMenu}
             className={startMenuOpen ? styles.startbtn_active : styles.startbtn}
           ></div>
-          {startMenuOpen && <StartMenu menuControl={setStartMenuOpen}/>}
+          {startMenuOpen && <StartMenu menuControl={setStartMenuOpen} />}
         </div>
         <div className={styles.tabbar}>
-          {Tabs.map((_item, index) =>
+          {Array.from(Tabs).map((_item, index) =>
             renderTabs(_item.title, _item.Icon, index)
           )}
         </div>

@@ -2,10 +2,16 @@ import { ReactNode, useEffect, useRef, useState } from "react";
 import Draggable from "react-draggable";
 import styles from "./WinForm.module.css";
 import WinToolBar from "components/WinToolbar/WinToolBar";
+import { StaticImageData } from "next/image";
+import Image from "next/image";
+import { removeTab } from "@/redux/tabSlice";
+import store from "@/redux/store";
 const WinForm = (props: {
+  id: number;
   title: string;
   width: string;
   children: ReactNode;
+  icon: StaticImageData;
   // isMinimized: boolean;
   // isClose: boolean;
 }) => {
@@ -14,6 +20,7 @@ const WinForm = (props: {
   const [isClose, setClose] = useState(false);
   const [currX, setX] = useState(0);
   const [currY, setY] = useState(0);
+
   const handleMaximize = () => {
     setMaximised(!isMaximized);
   };
@@ -22,7 +29,7 @@ const WinForm = (props: {
   };
 
   const handleClose = () => {
-    setClose(true);
+    store.dispatch(removeTab({ id: props.id }));
   };
   const handleStop = (event: any, dragElement: any) => {
     setX(dragElement.x);
@@ -48,7 +55,7 @@ const WinForm = (props: {
     <Draggable {...draggableProps}>
       <div
         style={{
-          display: isMinimized || isClose ? "none" : "inline",
+          display: isMinimized ? "none" : "inline",
           width: isMaximized ? "100%" : "500px",
           height: isMaximized ? "100%" : "500px",
         }}
@@ -64,8 +71,14 @@ const WinForm = (props: {
             }}
             className="handle"
           >
-            <div className={styles.icon} />
-            <div className={styles.title}>{props.title}</div>
+            <Image
+              width={20}
+              height={20}
+              alt="icon"
+              src={props.icon.src}
+              className={styles.icon}
+            />
+            <div className={styles.title}>{props.id}</div>
           </div>
           <div className={styles.titlecontrols}>
             <div onClick={handleMinimize} className={styles.minimise} />
