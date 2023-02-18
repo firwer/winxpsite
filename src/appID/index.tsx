@@ -6,22 +6,8 @@ import MyWork from "@/programs/MyWork";
 import outlook from "../../assets/outlook.png";
 import Outlook from "@/programs/Outlook";
 export const AppDirectory: Map<number, Tab> = new Map([
-  [
-    1,
-    {
-      id: 0,
-      title: "Outlook Express",
-      Icon: outlook,
-    },
-  ],
-  [6, { id: 1, title: "My Work", Icon: cmd}],
-  [2, { id: 2, title: "My Computer", Icon: mycomputer}],
-  [
-    3,
-    {
-      id: 3,
-      title: "My Documents",
-      Icon: folder_plain,
-    },
-  ],
+  [1, { id: 0, title: "Outlook Express", Icon: outlook, isMinimized: false }],
+  [2, { id: 0, title: "My Work", Icon: cmd, isMinimized: false }],
+  [3, { id: 0, title: "My Computer", Icon: mycomputer, isMinimized: false }],
+  [4, { id: 0, title: "My Documents", Icon: folder_plain, isMinimized: false }],
 ]);

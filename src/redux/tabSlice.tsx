@@ -7,23 +7,34 @@ export const tabtraySlice = createSlice({
   initialState: {
     tray: [] as Tab[],
     id: 0,
+    currentFocusedTab: -1,
   },
   reducers: {
     addTab: (state, action) => {
       state.tray.push(action.payload);
+      state.currentFocusedTab = action.payload.id;
       state.id = state.id + 1;
     },
     removeTab: (state, action) => {
-      console.log("Previous: " + state.tray);
       const index = state.tray.findIndex((tab) => tab.id === action.payload.id);
-      console.log("removing index: ", index);
       state.tray = state.tray.filter((_, i) => {
         return i !== index;
       });
-      console.log("Current: " + state.tray);
+    },
+    minimizeTab: (state, action) => {
+      const index = state.tray.findIndex((tab) => tab.id === action.payload.id);
+      state.tray[index].isMinimized = true;
+    },
+    maximizeTab: (state, action) => {
+      const index = state.tray.findIndex((tab) => tab.id === action.payload.id);
+      state.tray[index].isMinimized = false;
+    },
+    setFocusedTab: (state, action) => {
+      state.currentFocusedTab = action.payload.id;
     },
   },
 });
 
-export const { addTab, removeTab } = tabtraySlice.actions;
+export const { addTab, removeTab, minimizeTab, maximizeTab, setFocusedTab } =
+  tabtraySlice.actions;
 export default tabtraySlice.reducer;

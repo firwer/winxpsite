@@ -4,28 +4,41 @@ import styles from "./WinForm.module.css";
 import WinToolBar from "components/WinToolbar/WinToolBar";
 import { StaticImageData } from "next/image";
 import Image from "next/image";
-import { removeTab } from "@/redux/tabSlice";
+import {
+  maximizeTab,
+  minimizeTab,
+  removeTab,
+  setFocusedTab,
+} from "@/redux/tabSlice";
 import store from "@/redux/store";
+import { useSelector } from "react-redux";
+import { RootState } from "@/types";
+
+const unfocusedAdjustment = "brightness(1.05)";
 const WinForm = (props: {
   id: number;
   title: string;
   width: string;
   children: ReactNode;
   icon: StaticImageData;
-  // isMinimized: boolean;
-  // isClose: boolean;
 }) => {
   const [isMaximized, setMaximised] = useState(false);
   const [isMinimized, setMinimised] = useState(false);
-  const [isClose, setClose] = useState(false);
   const [currX, setX] = useState(0);
   const [currY, setY] = useState(0);
+  const currTabID = useSelector(
+    (state: RootState) => state.tab.currentFocusedTab
+  );
 
   const handleMaximize = () => {
     setMaximised(!isMaximized);
+    store.dispatch(maximizeTab({ id: props.id }));
+    store.dispatch(setFocusedTab({ id: props.id }));
   };
   const handleMinimize = () => {
     setMinimised(!isMinimized);
+    store.dispatch(minimizeTab({ id: props.id }));
+    store.dispatch(setFocusedTab({ id: -1 }));
   };
 
   const handleClose = () => {
@@ -61,7 +74,12 @@ const WinForm = (props: {
         }}
         className={styles.window}
       >
-        <div className={styles.titlebar}>
+        <div
+          onClick={() => store.dispatch(setFocusedTab({ id: props.id }))}
+          className={
+            currTabID == props.id ? styles.titlebar : styles.titlebar_unfocused
+          }
+        >
           <div
             style={{
               width: "100%",
@@ -81,15 +99,36 @@ const WinForm = (props: {
             <div className={styles.title}>{props.id}</div>
           </div>
           <div className={styles.titlecontrols}>
-            <div onClick={handleMinimize} className={styles.minimise} />
+            <div
+              onClick={handleMinimize}
+              style={{
+                filter: currTabID == props.id ? "" : unfocusedAdjustment,
+              }}
+              className={styles.minimise}
+            />
             <div
               onClick={handleMaximize}
+              style={{
+                filter: currTabID == props.id ? "" : unfocusedAdjustment,
+              }}
               className={isMaximized ? styles.resize : styles.maximise}
             />
-            <div onClick={handleClose} className={styles.close} />
+            <div
+              onClick={handleClose}
+              style={{
+                filter: currTabID == props.id ? "" : unfocusedAdjustment,
+              }}
+              className={styles.close}
+            />
           </div>
         </div>
-        <div className={styles.windowborder}>
+        <div
+          className={
+            currTabID == props.id
+              ? styles.windowborder
+              : styles.windowborder_unfocused
+          }
+        >
           <div className={styles.windowsbody}>
             <WinToolBar />
             {props.children}

@@ -15,16 +15,9 @@ import WinForm from "components/WinForm/WinForm";
 import { useState } from "react";
 import store from "@/redux/store";
 import { AppDirectory } from "@/appID";
-import { Tab } from "@/types";
+import { RootState, Tab } from "@/types";
 import { addTab } from "@/redux/tabSlice";
 import { useSelector } from "react-redux";
-
-interface RootState {
-  tab: {
-    tray: Tab[];
-    id: number;
-  };
-}
 
 export default function Home() {
   const Tabs = useSelector((state: RootState) => state.tab.tray);
@@ -95,7 +88,7 @@ export default function Home() {
         />
         <DesktopIcon
           appID={6}
-          doubleClick={() => handleRunApp(6)}
+          doubleClick={() => handleRunApp(2)}
           title="My Work"
           img={cmd}
         />
@@ -107,7 +100,9 @@ export default function Home() {
           img={solitare}
         />
         {Tabs.map((tab, index) => {
-          return (
+          return tab.isMinimized ? (
+            <></>
+          ) : (
             <WinForm
               key={index}
               id={tab.id}
