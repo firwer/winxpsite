@@ -7,7 +7,6 @@
   left: 0;
   height: 35px;
   width: 100%;
-  z-index: 0;
   background: linear-gradient(
     rgb(31, 47, 134) 0px,
     rgb(49, 101, 196) 3%,
@@ -62,7 +61,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  z-index: 4;
+
   width: 80%;
   height: 100%;
 }

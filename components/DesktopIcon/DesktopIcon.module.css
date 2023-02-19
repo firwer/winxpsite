@@ -60,7 +60,6 @@
   background-color: rgb(11, 97, 255);
 }
 .icon_overlay {
-  z-index: 0;
   position: absolute;
   top: 5px;
   left: 5px;

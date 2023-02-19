@@ -38,6 +38,7 @@ const StartBar = () => {
   const currTabID = useSelector(
     (state: RootState) => state.tab.currentFocusedTab
   );
+  const currzIndex = useSelector((state: RootState) => state.tab.currentZIndex);
 
   const handleTabFocus = (tabID: number) => {
     console.log("Tab To Focus: " + tabID);
@@ -92,7 +93,7 @@ const StartBar = () => {
   }, [ref]);
 
   return (
-    <div style={{ zIndex: 0 }}>
+    <div style={{ zIndex: currzIndex }}>
       <div className={styles.bluebar}>
         <div ref={ref}>
           <div

@@ -4,7 +4,6 @@
   bottom: 35px;
   width: 440px;
   height: 600px;
-  z-index: -1;
   display: flex;
   flex-direction: column;
   background-color: rgb(66, 130, 214);

@@ -71,7 +71,7 @@ const WinForm = (props: {
         style={{
           position: "absolute",
           display: isMinimized ? "none" : "inline",
-          width: isMaximized ? "100%" : "500px",
+          width: isMaximized ? "100%" : "600px",
           height: isMaximized ? "100%" : "500px",
           zIndex: props.zIndex,
         }}
@@ -81,9 +81,6 @@ const WinForm = (props: {
           onMouseDown={() => {
             store.dispatch(setFocusedTab({ id: props.id }));
           }}
-          // onClick={() => {
-          //   store.dispatch(setFocusedTab({ id: props.id }));
-          // }}
           className={
             currTabID == props.id ? styles.titlebar : styles.titlebar_unfocused
           }
@@ -104,7 +101,7 @@ const WinForm = (props: {
               src={props.icon.src}
               className={styles.icon}
             />
-            <div className={styles.title}>{props.title + " " + props.id}</div>
+            <div className={styles.title}>{props.title}</div>
           </div>
           <div className={styles.titlecontrols}>
             <div
@@ -131,6 +128,9 @@ const WinForm = (props: {
           </div>
         </div>
         <div
+          onMouseDown={() => {
+            store.dispatch(setFocusedTab({ id: props.id }));
+          }}
           className={
             currTabID == props.id
               ? styles.windowborder

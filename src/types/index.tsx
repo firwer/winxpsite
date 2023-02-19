@@ -13,5 +13,6 @@ export type RootState = {
     tray: Tab[];
     id: number;
     currentFocusedTab: number;
+    currentZIndex: number;
   };
 };
