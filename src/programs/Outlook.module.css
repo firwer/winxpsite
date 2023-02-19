@@ -1,0 +1,94 @@
+.main {
+  background-color: #ede9d3;
+  height: 100%;
+  width: 100%;
+  padding: 0px 6px 6px 6px;
+}
+
+.icons_toolbar {
+  display: flex;
+  flex-direction: row;
+  background: #ede9d3;
+  height: 50px;
+  align-items: center;
+  padding: 5px;
+}
+
+.icon {
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid transparent;
+}
+
+.icon:hover {
+  background: #f4f4ed;
+  border-radius: 5px;
+  border: 1px solid #cecec3;
+  filter: brightness(1.02);
+}
+
+.icon:active {
+  color: white;
+  background: #e2e1d9;
+}
+
+.mailing {
+  display: flex;
+  flex-direction: row;
+  background: #ede9d3;
+  margin: 10px 5px;
+}
+
+.mailing_text {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  gap: 5px;
+  align-items: flex-start;
+}
+
+.field_text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 14px;
+}
+
+.mailing_fields {
+  display: flex;
+  flex-direction: column;
+  padding: 1px 10px;
+  width: 100%;
+  gap: 4px;
+}
+
+.textfield {
+  height: 18px;
+  box-shadow: inset 1px 1px 1px #aca899;
+  width: 100%;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.vertical_line {
+  border-left: 1px solid #cac6af;
+  height: 100%;
+  margin: 0 8px;
+}
+
+.richfield {
+  cursor: default;
+  height: 65%;
+  width: 100%;
+}
+
+.richtextbox {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  font-size: 14px;
+  font-family: inherit;
+  box-shadow: inset 2px 2px 2px #888;
+}

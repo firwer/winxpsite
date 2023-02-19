@@ -15,10 +15,12 @@ import WinForm from "components/WinForm/WinForm";
 import { useState } from "react";
 import store from "@/redux/store";
 import { AppDirectory } from "@/appID";
-import { RootState, Tab } from "@/types";
+import { App, RootState, Tab } from "@/types";
 import { addTab } from "@/redux/tabSlice";
 import { useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
+import Outlook from "@/programs/Outlook";
+import MyWork from "@/programs/MyWork";
 export default function Home() {
   const Tabs = useSelector((state: RootState) => state.tab.tray);
   const currTabID = useSelector((state: RootState) => state.tab.id);
@@ -117,8 +119,9 @@ export default function Home() {
                 width={"500"}
                 icon={tab.Icon}
                 zIndex={tab.zIndex}
+                programType={tab.program}
               >
-                {"Z Index: " + tab.zIndex}
+                {tab.program === App.MYWORK ? <MyWork /> : <Outlook />}
               </WinForm>
             );
           })}

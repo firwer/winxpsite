@@ -100,7 +100,7 @@
   justify-content: space-between;
 }
 .vertical_line {
-  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid #cac6af;
   height: 100%;
   margin: 0 8px;
 }

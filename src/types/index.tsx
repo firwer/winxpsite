@@ -6,6 +6,7 @@ export type Tab = {
   Icon: StaticImageData;
   isMinimized: boolean;
   zIndex: number;
+  program: App;
 };
 
 export type RootState = {
@@ -16,3 +17,10 @@ export type RootState = {
     currentZIndex: number;
   };
 };
+
+export enum App {
+  MYWORK,
+  OUTLOOK,
+  MYDOCUMENT,
+  MYBLOG,
+}

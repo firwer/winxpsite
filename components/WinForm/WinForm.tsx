@@ -12,7 +12,7 @@ import {
 } from "@/redux/tabSlice";
 import store from "@/redux/store";
 import { useSelector } from "react-redux";
-import { RootState } from "@/types";
+import { App, RootState } from "@/types";
 
 const unfocusedAdjustment = "brightness(1.05)";
 const WinForm = (props: {
@@ -22,6 +22,7 @@ const WinForm = (props: {
   children: ReactNode;
   icon: StaticImageData;
   zIndex: number;
+  programType: App;
 }) => {
   const [isMaximized, setMaximised] = useState(false);
   const [isMinimized, setMinimised] = useState(false);
@@ -138,7 +139,7 @@ const WinForm = (props: {
           }
         >
           <div className={styles.windowsbody}>
-            <WinToolBar title={props.title} icon={props.icon} />
+            <WinToolBar title={props.title} icon={props.icon} programType={props.programType}/>
             {props.children}
           </div>
         </div>
