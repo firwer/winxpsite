@@ -138,7 +138,7 @@ const WinForm = (props: {
           }
         >
           <div className={styles.windowsbody}>
-            <WinToolBar />
+            <WinToolBar title={props.title} icon={props.icon} />
             {props.children}
           </div>
         </div>

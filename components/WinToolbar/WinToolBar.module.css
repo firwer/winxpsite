@@ -1,6 +1,6 @@
 .topwindowsbar {
   display: flex;
-  height: 35px;
+  height: 32px;
   flex-direction: row;
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
@@ -8,7 +8,7 @@
 .winlogo {
   background: url(../../assets/winlogo.png) no-repeat center;
   background-size: cover;
-  width: 60px;
+  width: 55px;
   height: 98%;
   margin-right: 1px;
 }
@@ -25,11 +25,82 @@
 
 .toolbaritem {
   cursor: default;
-  font-size: 14px;
+  font-size: 13px;
   padding: 6px;
+  border: 1px solid transparent;
 }
 
 .toolbaritem:hover {
-  background-color: rgb(22, 96, 232);
-  color: white;
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+  box-shadow: 1px 1px #b9b6aa;
+}
+
+.toolbaritem:active {
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  box-shadow: -1px -1px #b9b6aa;
+}
+
+.toolbar_icon {
+  display: flex;
+  flex-direction: row;
+  background: #ede9d3;
+  height: 35px;
+  align-items: center;
+  padding: 5px;
+}
+.bottomwindowsbar {
+  display: flex;
+  flex-direction: row;
+  height: 24px;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  background: #ede9d3;
+}
+
+.forward {
+  display: flex;
+  align-items: center;
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  margin: 0 5px;
+}
+.search {
+  display: flex;
+  align-items: center;
+}
+.folders {
+  display: flex;
+  align-items: center;
+}
+
+.go {
+  padding: 0 5px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.goIcon:hover {
+  filter: brightness(1.1);
+}
+.dropdownIcon:hover {
+  filter: brightness(1.1);
+}
+.addressbar {
+  display: flex;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 100%;
+  align-items: center;
+  margin: 0 5px;
+  justify-content: space-between;
+}
+.vertical_line {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  height: 100%;
+  margin: 0 8px;
 }
