@@ -95,8 +95,9 @@ const StartMenu = ({ menuControl }: StartMenuProps) => {
               type={1}
             />
             <StartMenuItem
+            onClick={() => handleRunApp(1)}
               title="E-mail"
-              subtitle="Outlook Express"
+              subtitle="Drop me a message!"
               icon={outlook}
               type={1}
             />

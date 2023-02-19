@@ -18,7 +18,7 @@ import { AppDirectory } from "@/appID";
 import { RootState, Tab } from "@/types";
 import { addTab } from "@/redux/tabSlice";
 import { useSelector } from "react-redux";
-
+import { v4 as uuidv4 } from "uuid";
 export default function Home() {
   const Tabs = useSelector((state: RootState) => state.tab.tray);
   const currTabID = useSelector((state: RootState) => state.tab.id);
@@ -111,7 +111,7 @@ export default function Home() {
               <></>
             ) : (
               <WinForm
-                key={index}
+                key={tab.id || uuidv4()}
                 id={tab.id}
                 title={tab.title}
                 width={"500"}
