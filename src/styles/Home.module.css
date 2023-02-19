@@ -1,5 +1,6 @@
 .main {
   display: flex;
+  position: relative;
   background-image: url("https://i.imgur.com/Zk6TR5k.jpg");
   background-repeat: no-repeat;
   background-size: cover;

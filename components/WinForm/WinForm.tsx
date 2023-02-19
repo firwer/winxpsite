@@ -21,6 +21,7 @@ const WinForm = (props: {
   width: string;
   children: ReactNode;
   icon: StaticImageData;
+  zIndex: number;
 }) => {
   const [isMaximized, setMaximised] = useState(false);
   const [isMinimized, setMinimised] = useState(false);
@@ -68,14 +69,21 @@ const WinForm = (props: {
     <Draggable {...draggableProps}>
       <div
         style={{
+          position: "absolute",
           display: isMinimized ? "none" : "inline",
           width: isMaximized ? "100%" : "500px",
           height: isMaximized ? "100%" : "500px",
+          zIndex: props.zIndex,
         }}
         className={styles.window}
       >
         <div
-          onClick={() => store.dispatch(setFocusedTab({ id: props.id }))}
+          onMouseDown={() => {
+            store.dispatch(setFocusedTab({ id: props.id }));
+          }}
+          // onClick={() => {
+          //   store.dispatch(setFocusedTab({ id: props.id }));
+          // }}
           className={
             currTabID == props.id ? styles.titlebar : styles.titlebar_unfocused
           }
@@ -96,7 +104,7 @@ const WinForm = (props: {
               src={props.icon.src}
               className={styles.icon}
             />
-            <div className={styles.title}>{props.id}</div>
+            <div className={styles.title}>{props.title + " " + props.id}</div>
           </div>
           <div className={styles.titlecontrols}>
             <div

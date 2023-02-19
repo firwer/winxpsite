@@ -5,6 +5,7 @@ export type Tab = {
   title: string;
   Icon: StaticImageData;
   isMinimized: boolean;
+  zIndex: number;
 };
 
 export type RootState = {

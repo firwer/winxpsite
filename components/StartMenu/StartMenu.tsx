@@ -25,18 +25,12 @@ import defaultprog from "../../assets/defaultprog.png";
 import printerfax from "../../assets/printerfax.png";
 import { AppDirectory } from "@/appID";
 import { addTab } from "@/redux/tabSlice";
-import { Tab } from "@/types";
+import { RootState, Tab } from "@/types";
 import store from "@/redux/store";
 import { useSelector } from "react-redux";
 
 interface StartMenuProps {
   menuControl: React.Dispatch<React.SetStateAction<boolean>>;
-}
-interface RootState {
-  tab: {
-    tray: Tab[];
-    id: number;
-  };
 }
 
 const StartMenu = ({ menuControl }: StartMenuProps) => {
@@ -126,7 +120,7 @@ const StartMenu = ({ menuControl }: StartMenuProps) => {
             />
             <StartMenuItem
               title="My Work"
-              onClick={() => handleRunApp(6)}
+              onClick={() => handleRunApp(2)}
               icon={cmd}
               type={2}
             />
