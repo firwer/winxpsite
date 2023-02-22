@@ -166,10 +166,6 @@ const Outlook = () => {
               <p>Subject:</p>
             </div>
           </div>
-          <ReCAPTCHA
-            sitekey="6Lf56aQkAAAAANwyzQiVcXM9TTgoEVDP5ge-_gwT"
-            ref={captchaRef}
-          />
           <div className={styles.mailing_fields}>
             <input
               className={styles.textfield}

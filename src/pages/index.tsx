@@ -113,7 +113,7 @@ export default function Home() {
               <></>
             ) : (
               <WinForm
-                key={tab.id || uuidv4()}
+                key={tab.id}
                 id={tab.id}
                 title={tab.title}
                 width={"500"}
