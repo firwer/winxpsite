@@ -20,9 +20,7 @@ export const tabtraySlice = createSlice({
     },
     removeTab: (state, action) => {
       const index = state.tray.findIndex((tab) => tab.id === action.payload.id);
-      console.log("To Remove: " + index);
       state.tray = state.tray.filter((_, i) => {
-        console.log(i, index);
         return i !== index;
       });
     },

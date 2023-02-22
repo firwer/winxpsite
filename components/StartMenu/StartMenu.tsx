@@ -29,6 +29,7 @@ import { RootState, Tab } from "@/types";
 import store from "@/redux/store";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 interface StartMenuProps {
   menuControl: React.Dispatch<React.SetStateAction<boolean>>;
@@ -50,10 +51,10 @@ const StartMenu = ({ menuControl }: StartMenuProps) => {
       "noreferrer"
     );
   };
-  const currTabID = useSelector((state: RootState) => state.tab.id);
+  //const currTabID = useSelector((state: RootState) => state.tab.id);
   const handleRunApp = (e: number) => {
     menuControl(false);
-    const newTab = { ...AppDirectory.get(e), id: currTabID };
+    const newTab = { ...AppDirectory.get(e), id: uuidv4() };
     store.dispatch(addTab(newTab));
   };
   return (
@@ -62,8 +63,8 @@ const StartMenu = ({ menuControl }: StartMenuProps) => {
       <div className={styles.menutopbar}>
         <img
           src={userprofile.src}
-          width={45}
-          height={45}
+          width={55}
+          height={55}
           style={{
             border: "2px",
             borderStyle: "solid",
@@ -75,13 +76,13 @@ const StartMenu = ({ menuControl }: StartMenuProps) => {
         />
         <p
           style={{
-            fontSize: 14,
+            fontSize: 16,
             fontWeight: 700,
             color: "white",
             textShadow: "1px 1px #000000",
           }}
         >
-          Wei Pin
+          Wei Pin's PC
         </p>
       </div>
       <hr className={styles.orangehr} />
@@ -95,7 +96,7 @@ const StartMenu = ({ menuControl }: StartMenuProps) => {
               type={1}
             />
             <StartMenuItem
-            onClick={() => handleRunApp(1)}
+              onClick={() => handleRunApp(1)}
               title="E-mail"
               subtitle="Drop me a message!"
               icon={outlook}

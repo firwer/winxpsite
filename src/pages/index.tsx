@@ -26,7 +26,7 @@ export default function Home() {
   const currTabID = useSelector((state: RootState) => state.tab.id);
 
   const handleRunApp = (e: number) => {
-    const newTab = { ...AppDirectory.get(e), id: currTabID, zIndex: currTabID };
+    const newTab = { ...AppDirectory.get(e), id: uuidv4(), zIndex: currTabID };
     store.dispatch(addTab(newTab));
   };
 

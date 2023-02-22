@@ -41,8 +41,6 @@ const StartBar = () => {
   const currzIndex = useSelector((state: RootState) => state.tab.currentZIndex);
 
   const handleTabFocus = (tabID: number) => {
-    console.log("Tab To Focus: " + tabID);
-    console.log("Current Tab: " + currTabID);
     if (currTabID === tabID) {
       store.dispatch(minimizeTab({ id: tabID }));
       store.dispatch(setFocusedTab({ id: -1 }));

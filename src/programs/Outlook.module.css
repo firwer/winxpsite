@@ -20,6 +20,16 @@
   flex-direction: column;
   align-items: center;
   border: 1px solid transparent;
+  filter: brightness(1.05);
+}
+
+.icon_disabled {
+  color: grey;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid transparent;
 }
 
 .icon:hover {

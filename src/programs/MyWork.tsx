@@ -1,7 +1,13 @@
+import WinAccordion from "components/WinAccordion/WinAccordion";
+import styles from "./MyWork.module.css";
+
 const MyWork = () => {
   return (
-    <div>
-      <h1>I have a work for you</h1>
+    <div className={styles.main}>
+      <div className={styles.leftpanel}>
+        <WinAccordion title="LOL">s</WinAccordion>
+      </div>
+      <div className={styles.rightpanel}></div>
     </div>
   );
 };

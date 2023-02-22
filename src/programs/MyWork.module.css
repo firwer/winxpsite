@@ -1,0 +1,15 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.leftpanel {
+  width: 200px;
+  background: linear-gradient(rgb(116, 138, 255) 0%, rgb(64, 87, 211) 100%);
+  padding: 10px;
+}
+
+.rightpanel {
+  width: 65%;
+}

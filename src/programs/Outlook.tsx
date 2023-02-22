@@ -9,21 +9,70 @@ import undo from "../../assets/toolbar/undo.png";
 import check from "../../assets/toolbar/check.png";
 import spelling from "../../assets/toolbar/spelling.png";
 import { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import React from "react";
 
 const Outlook = () => {
-  const [to, setTo] = useState("");
   const [from, setFrom] = useState("");
   const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const API_KEY = process.env.NEXT_PUBLIC_MAILGUN_API;
+  const FROM_EMAIL = "feedback@pohwp.dev";
+  const TO_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL;
+  const axios = require("axios");
+  const captchaRef = React.useRef(null);
+  const sendEmail = async () => {
+    if (from !== "" && subject !== "") {
+      console.log(API_KEY);
+      await axios({
+        method: "post",
+        url: `https://api.mailgun.net/v3/pohwp.dev/messages`,
+        auth: {
+          username: "api",
+          password: API_KEY,
+        },
+        params: {
+          from: FROM_EMAIL,
+          to: TO_EMAIL,
+          subject: "New Message From A Visitor!",
+          text: "From: " + from + "\nMessage: " + message,
+        },
+      })
+        .then(() => {
+          console.log("Email sent successfully!");
+        })
+        .catch(() => {
+          console.error("Error sending email:");
+        });
+    } else {
+      console.log("Please fill in all fields!");
+    }
+  };
+
   return (
     <div className={styles.main}>
       <div className={styles.icons_toolbar}>
-        <div className={styles.icon}>
+        <div
+          className={
+            from !== "" && subject !== "" && message !== ""
+              ? styles.icon
+              : styles.icon_disabled
+          }
+        >
           <Image
-            style={{ margin: "0 4px" }}
+            style={
+              from !== "" && subject !== "" && message !== ""
+                ? { margin: "0 4px" }
+                : {
+                    margin: "0 4px",
+                    filter: "grayscale(100%) brightness(0.9)",
+                  }
+            }
             alt="send"
             width={40}
             height={30}
             src={send.src}
+            onClick={sendEmail}
           />
           <p>Send</p>
         </div>
@@ -117,11 +166,15 @@ const Outlook = () => {
               <p>Subject:</p>
             </div>
           </div>
+          <ReCAPTCHA
+            sitekey="6Lf56aQkAAAAANwyzQiVcXM9TTgoEVDP5ge-_gwT"
+            ref={captchaRef}
+          />
           <div className={styles.mailing_fields}>
             <input
-              readOnly
               className={styles.textfield}
               style={{ cursor: "default" }}
+              disabled
               id="text21"
               type="text"
               value="Poh Wei Pin (pohwp99@gmail.com)"
@@ -129,7 +182,9 @@ const Outlook = () => {
             <input
               className={styles.textfield}
               placeholder="Enter your email address"
-              id="text21"
+              onChange={(e) => {
+                setFrom(e.target.value);
+              }}
               type="email"
             />
             <input
@@ -138,7 +193,6 @@ const Outlook = () => {
               onChange={(e) => {
                 setSubject(e.target.value);
               }}
-              id=" text21"
               type="text"
             />
           </div>
@@ -148,6 +202,9 @@ const Outlook = () => {
         <textarea
           draggable={false}
           className={styles.richtextbox}
+          onChange={(e) => {
+            setMessage(e.target.value);
+          }}
           id="text24"
           placeholder="Type your message here...(Maybe you want to hire me for a job or something?)"
         ></textarea>

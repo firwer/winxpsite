@@ -10,4 +10,7 @@ module.exports = {
 
     return config;
   },
+  env: {
+    BASE_URL: process.env.BASE_URL,
+  },
 };

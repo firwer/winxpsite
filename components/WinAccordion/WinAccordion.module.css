@@ -1,0 +1,17 @@
+.accordion {
+  width: 200px;
+  height: 20px;
+}
+
+.accordion_title {
+  display: flex;
+  height: 23px;
+  width: 100%;
+  cursor: pointer;
+  background: linear-gradient(
+    to right,
+    rgb(240, 240, 255) 0px,
+    rgb(240, 240, 255) 30%,
+    rgb(168, 188, 255) 100%
+  );
+}
