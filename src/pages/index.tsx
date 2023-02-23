@@ -14,7 +14,7 @@ import linkedin from "../../assets/linkedin.png";
 import WinForm from "components/WinForm/WinForm";
 import { useState } from "react";
 import store from "@/redux/store";
-import { AppDirectory } from "@/appID";
+import { AppDirectory } from "@/appData";
 import { App, RootState, Tab } from "@/types";
 import { addTab } from "@/redux/tabSlice";
 import { useSelector } from "react-redux";

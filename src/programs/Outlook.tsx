@@ -34,7 +34,7 @@ const Outlook = () => {
         params: {
           from: FROM_EMAIL,
           to: TO_EMAIL,
-          subject: "New Message From A Visitor!",
+          subject: "New Message From A Visitor: " + subject,
           text: "From: " + from + "\nMessage: " + message,
         },
       })

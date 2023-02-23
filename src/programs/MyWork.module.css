@@ -2,14 +2,36 @@
   display: flex;
   flex-direction: row;
   height: 100%;
+  overflow: auto;
 }
 
 .leftpanel {
-  width: 200px;
+  width: 300px;
+  max-height: 100%;
   background: linear-gradient(rgb(116, 138, 255) 0%, rgb(64, 87, 211) 100%);
   padding: 10px;
+  overflow-y: auto;
+}
+
+.leftpanel::-webkit-scrollbar {
+  width: 15px;
+}
+
+.leftpanel::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  border: 2px solid #ddd;
 }
 
 .rightpanel {
-  width: 65%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 100%;
+}
+
+.content_tech {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
 }

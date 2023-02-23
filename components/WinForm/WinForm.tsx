@@ -72,7 +72,7 @@ const WinForm = (props: {
         style={{
           position: "absolute",
           display: isMinimized ? "none" : "inline",
-          width: isMaximized ? "100%" : "600px",
+          width: isMaximized ? "100%" : "700px",
           height: isMaximized ? "100%" : "500px",
           zIndex: props.zIndex,
         }}
@@ -139,7 +139,11 @@ const WinForm = (props: {
           }
         >
           <div className={styles.windowsbody}>
-            <WinToolBar title={props.title} icon={props.icon} programType={props.programType}/>
+            <WinToolBar
+              title={props.title}
+              icon={props.icon}
+              programType={props.programType}
+            />
             {props.children}
           </div>
         </div>

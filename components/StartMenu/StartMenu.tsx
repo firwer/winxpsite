@@ -23,7 +23,7 @@ import logoff from "../../assets/logoff.png";
 import shutdown from "../../assets/shutdown.png";
 import defaultprog from "../../assets/defaultprog.png";
 import printerfax from "../../assets/printerfax.png";
-import { AppDirectory } from "@/appID";
+import { AppDirectory } from "@/appData";
 import { addTab } from "@/redux/tabSlice";
 import { RootState, Tab } from "@/types";
 import store from "@/redux/store";

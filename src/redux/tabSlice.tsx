@@ -1,4 +1,4 @@
-import { AppDirectory } from "@/appID";
+import { AppDirectory } from "@/appData";
 import { Tab } from "@/types";
 import { createSlice } from "@reduxjs/toolkit";
 
