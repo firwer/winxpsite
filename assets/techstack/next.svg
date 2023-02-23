@@ -1,20 +1,25 @@
-<svg width="303" height="303" viewBox="0 0 303 303" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_d_20_2145)">
-<path d="M135.717 121.406L152.051 130.837L151.305 132.129L136.469 123.563L130.854 133.287L144.806 141.342L144.061 142.634L130.109 134.579L123.945 145.255L138.952 153.919L138.206 155.211L121.701 145.682L135.717 121.406ZM153.515 131.681L155.25 132.683L156.777 147.8L170.801 141.662L189.323 134.274L157.116 149.491L158.963 167.196L157.16 166.154L155.481 150.044L140.656 156.626L138.886 155.604L155.21 148.391L153.515 131.681ZM172.88 144.585L173.626 143.293L192.24 154.039L191.494 155.331L182.919 150.38L169.649 173.365L168.151 172.5L181.421 149.516L172.88 144.585Z" fill="black"/>
-<path d="M115.283 109.608L117.154 110.689L120.773 164.024L118.282 143.708L115.788 112.348L102.764 134.749L101.267 133.885L115.283 109.608Z" fill="black"/>
-<path d="M179.044 176.547C179.354 176.725 179.716 176.62 179.892 176.315C180.068 176.01 179.978 175.644 179.669 175.465C179.363 175.289 178.997 175.392 178.821 175.697C178.645 176.002 178.738 176.37 179.044 176.547ZM181.337 175.974C180.817 176.874 181.13 177.838 182.08 178.387C183.093 178.971 184.054 178.718 184.662 177.666L186.801 173.961L185.985 173.49L183.848 177.191C183.511 177.776 183.036 177.917 182.515 177.617C182.049 177.348 181.9 176.874 182.138 176.436L181.337 175.974ZM185.658 178.405C185.175 179.375 185.613 180.426 186.778 181.099C188.023 181.818 189.165 181.64 189.744 180.639C190.198 179.851 190.005 179.159 189.072 178.286L188.575 177.81C187.982 177.256 187.829 176.882 188.045 176.508C188.317 176.036 188.925 175.976 189.57 176.348C190.181 176.701 190.43 177.246 190.228 177.773L191.022 178.231C191.483 177.322 191.062 176.252 189.995 175.636C188.848 174.973 187.725 175.152 187.187 176.085C186.742 176.854 186.912 177.562 187.735 178.332L188.318 178.886C188.919 179.451 189.087 179.867 188.856 180.266C188.588 180.731 187.912 180.791 187.257 180.413C186.554 180.007 186.248 179.409 186.466 178.872L185.658 178.405Z" fill="black"/>
-<rect x="118.645" y="24.7856" width="179" height="179" rx="31.5" transform="rotate(30 118.645 24.7856)" stroke="#D9D9D9"/>
-</g>
-<defs>
-<filter id="filter0_d_20_2145" x="-11.5385" y="-11.8975" width="325.885" height="325.885" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dy="4"/>
-<feGaussianBlur stdDeviation="20"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.0367917 0 0 0 0 0.0348958 0 0 0 0 0.0484375 0 0 0 0.1 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_20_2145"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_20_2145" result="shape"/>
-</filter>
-</defs>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
+    <title>Next.js</title>
+    <defs>
+        <circle id="path-1" cx="128" cy="128" r="128"></circle>
+        <linearGradient x1="55.6325605%" y1="56.3850422%" x2="83.2279093%" y2="96.0801119%" id="nextjsLinearGradient-3">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0%" x2="49.9534722%" y2="73.4375%" id="nextjsLinearGradient-4">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g>
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <g mask="url(#mask-2)">
+            <circle fill="#000000" cx="128" cy="128" r="128"></circle>
+            <path d="M212.6336,224.028444 L98.3352889,76.8 L76.8,76.8 L76.8,179.157333 L94.0282311,179.157333 L94.0282311,98.6788978 L199.109689,234.446222 C203.851378,231.273244 208.368356,227.790222 212.6336,224.028444 Z" fill="url(#nextjsLinearGradient-3)"></path>
+            <rect fill="url(#nextjsLinearGradient-4)" x="163.555556" y="76.8" width="17.0666667" height="102.4"></rect>
+        </g>
+    </g>
 </svg>

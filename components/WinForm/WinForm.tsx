@@ -73,7 +73,7 @@ const WinForm = (props: {
           position: "absolute",
           display: isMinimized ? "none" : "inline",
           width: isMaximized ? "100%" : "700px",
-          height: isMaximized ? "100%" : "500px",
+          height: isMaximized ? "100%" : "600px",
           zIndex: props.zIndex,
         }}
         className={styles.window}

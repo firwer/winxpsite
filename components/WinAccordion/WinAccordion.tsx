@@ -11,7 +11,7 @@ interface props {
 }
 
 const WinAccordion = ({ title, setDisplay }: props) => {
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(true);
 
   return (
     <div className={styles.accordion}>

@@ -44,8 +44,7 @@ export type WorkContent = {
   title: string;
   date: string;
   gitURL: string;
+  gallery: StaticImageData[];
   techstack: StaticImageData[];
-  objective: string;
-  description: string;
-  challenges: string;
+  overview: string;
 };
