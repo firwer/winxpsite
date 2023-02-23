@@ -45,6 +45,6 @@ export type WorkContent = {
   date: string;
   gitURL: string;
   gallery: StaticImageData[];
-  techstack: StaticImageData[];
+  techstack: string[];
   overview: string;
 };

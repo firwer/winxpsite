@@ -37,9 +37,12 @@
 
 .content_tech {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.tech_badge {
+  display: inline-block;
+  margin: 5px;
 }
 
 .header {
