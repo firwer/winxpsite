@@ -76,24 +76,26 @@ const MyWork = () => {
             )}
             <div className={styles.body}>
               <h4>Overview:</h4>
-              <p>{currDisplay.overview}</p>
-              <div
-                onMouseEnter={() => setgitIcon(github)}
-                onMouseLeave={() => setgitIcon(github_w)}
-                onClick={() =>
-                  window.open(currDisplay.gitURL, "_blank", "noreferrer")
-                }
-                className={styles.github_button}
-              >
-                View On GitHub
-                <Image
-                  className={styles.github_icon}
-                  alt="git"
-                  src={gitIcon.src}
-                  height={50}
-                  width={50}
-                />
-              </div>
+              {currDisplay.overview}
+              {currDisplay.gitURL !== "" && (
+                <div
+                  onMouseEnter={() => setgitIcon(github)}
+                  onMouseLeave={() => setgitIcon(github_w)}
+                  onClick={() =>
+                    window.open(currDisplay.gitURL, "_blank", "noreferrer")
+                  }
+                  className={styles.github_button}
+                >
+                  View On GitHub
+                  <Image
+                    className={styles.github_icon}
+                    alt="git"
+                    src={gitIcon.src}
+                    height={50}
+                    width={50}
+                  />
+                </div>
+              )}
             </div>
             <div className={styles.body}>
               <h4>Techstack Used</h4>
