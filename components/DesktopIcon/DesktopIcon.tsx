@@ -1,7 +1,8 @@
 import { StaticImageData } from "next/image";
-import { useState, useRef, useEffect, ReactHTMLElement } from "react";
+import { useState, useRef, useEffect } from "react";
 import Draggable from "react-draggable";
 import styles from "./DesktopIcon.module.css";
+import Image from "next/image";
 
 const DesktopIcon = (props: {
   title: string;
@@ -39,8 +40,10 @@ const DesktopIcon = (props: {
           <div
             className={selected ? styles.iconimage_selected : styles.iconimage}
           >
-            <img
-              style={{ height: "45px", maxHeight: "45px", maxWidth: "100%" }}
+            <Image
+              width={45}
+              height={45}
+              style={{ maxWidth: "100%" }}
               src={props.img.src}
               alt="icon"
             />

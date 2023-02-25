@@ -25,8 +25,12 @@ const MyWork = () => {
       <div className={styles.leftpanel}>
         <div>
           <div className={styles.accordion}>
-            {WorkAccordionTitles.map((title) => (
-              <WinAccordion title={title} setDisplay={setCurrDisplay} />
+            {WorkAccordionTitles.map((title, index) => (
+              <WinAccordion
+                key={index}
+                title={title}
+                setDisplay={setCurrDisplay}
+              />
             ))}
           </div>
         </div>

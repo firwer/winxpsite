@@ -10,6 +10,7 @@ import { StaticImageData } from "next/image";
 import { RootState, Tab } from "src/types";
 import { useSelector } from "react-redux";
 import store from "@/redux/store";
+import Image from "next/image";
 import { maximizeTab, minimizeTab, setFocusedTab } from "@/redux/tabSlice";
 
 const getTime = () => {
@@ -108,25 +109,29 @@ const StartBar = () => {
         <div className={styles.icontray}>
           <div className={styles.iconrow}>
             <div className={styles.icon}>
-              <img
+              <Image
+                width={15}
                 style={{ margin: "0px 3px 0px 3px" }}
                 height={15}
                 src={greenshield.src}
                 alt="Icon 1"
               />
-              <img
+              <Image
+                width={15}
                 style={{ margin: "0px 3px 0px 3px" }}
                 height={15}
                 src={internet.src}
                 alt="Icon 2"
               />
-              <img
+              <Image
+                width={15}
                 style={{ margin: "0px 3px 0px 3px" }}
                 height={15}
                 src={sound.src}
                 alt="Icon 3"
               />
-              <img
+              <Image
+                width={15}
                 style={{ margin: "0px 3px 0px 3px" }}
                 height={15}
                 src={removabledevice.src}

@@ -1,5 +1,6 @@
 import styles from "./TrayTab.module.css";
 import { StaticImageData } from "next/image";
+import Image from "next/image";
 interface props {
   title: String;
   Icon: StaticImageData;
@@ -15,7 +16,13 @@ const TrayTab = ({ Icon, title, onFocus, isFocused }: props) => {
         isFocused ? styles.tab_container_focused : styles.tab_container
       }
     >
-      <img className={styles.tab_icon} src={Icon.src} />
+      <Image
+        width={20}
+        height={20}
+        alt="icon"
+        className={styles.tab_icon}
+        src={Icon.src}
+      />
       <div className={styles.tab_text}>{title}</div>
     </div>
   );

@@ -41,9 +41,10 @@ const WinAccordion = ({ title, setDisplay }: props) => {
       {isActive && (
         <div className={styles.accordion_content}>
           {WorkAccordionContent.filter((f) => f.type === title).map(
-            ({ title, icon, content }) => {
+            ({ title, icon, content }, index) => {
               return (
                 <div
+                  key={index}
                   className={styles.accordion_content_item}
                   onClick={() => setDisplay(content)}
                 >

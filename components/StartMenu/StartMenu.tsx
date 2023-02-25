@@ -25,10 +25,8 @@ import defaultprog from "../../assets/defaultprog.png";
 import printerfax from "../../assets/printerfax.png";
 import { AppDirectory } from "@/appData";
 import { addTab } from "@/redux/tabSlice";
-import { RootState, Tab } from "@/types";
 import store from "@/redux/store";
-import { useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import Image from "next/image";
 import { v4 as uuidv4 } from "uuid";
 
 interface StartMenuProps {
@@ -61,7 +59,8 @@ const StartMenu = ({ menuControl }: StartMenuProps) => {
     <div className={styles.startmenu}>
       <hr className={styles.whitehr} />
       <div className={styles.menutopbar}>
-        <img
+        <Image
+          alt="userprofile"
           src={userprofile.src}
           width={55}
           height={55}
@@ -134,8 +133,11 @@ const StartMenu = ({ menuControl }: StartMenuProps) => {
             <hr className={styles.greyhr} />
             <div className={styles.allprograms}>
               All Programs
-              <img
-                style={{ height: "18px", marginLeft: "4px" }}
+              <Image
+                height={15}
+                width={15}
+                alt="arrow"
+                style={{ marginLeft: "4px" }}
                 src={arrow.src}
               />
             </div>
@@ -168,11 +170,23 @@ const StartMenu = ({ menuControl }: StartMenuProps) => {
       </div>
       <div className={styles.menubtmbar}>
         <div className={styles.systemBtn}>
-          <img className={styles.systemBtnIcon} src={logoff.src} />
+          <Image
+            width={30}
+            height={30}
+            alt=""
+            className={styles.systemBtnIcon}
+            src={logoff.src}
+          />
           Log Off
         </div>
         <div className={styles.systemBtn}>
-          <img className={styles.systemBtnIcon} src={shutdown.src} />
+          <Image
+            width={30}
+            height={30}
+            alt=""
+            className={styles.systemBtnIcon}
+            src={shutdown.src}
+          />
           Turn Off Computer
         </div>
       </div>
