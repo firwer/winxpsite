@@ -80,6 +80,7 @@
   width: 100%;
   font-family: inherit;
   font-size: 14px;
+  color: black;
 }
 
 .vertical_line {
@@ -101,4 +102,5 @@
   font-size: 14px;
   font-family: inherit;
   box-shadow: inset 2px 2px 2px #888;
+  color: black;
 }

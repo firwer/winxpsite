@@ -1,5 +1,5 @@
 import styles from "./StartMenu.module.css";
-import userprofile from "../../assets/lift-off.jpg";
+import userprofile from "../../assets/userprofile.jpg";
 import folder from "../../assets/folder_plain.png";
 import StartMenuItem from "components/StartMenuItem/StartMenuItem";
 import recentdoc from "../../assets/recentdoc.png";

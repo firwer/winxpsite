@@ -233,7 +233,7 @@ export const WorkData = [
     gallery: [lul],
     overview: `This project began as my software journey first began on Windows XP. Back then, I was
     trying out many different things on my old XP computer such as creating my little CLI application
-    on batch files and also developing my very first GUI apps on Visual Basic 2010 (i.e Text encrypters,
+    on batch files and also developing my very first GUI apps on Visual Studio 2010 (i.e Text encrypters,
     My own Web browser, phishing program that can steal my friend's passwords :P, and I forgot what else...)
     .Unfortunately, I lost all of those files so it was somewhat nostalgic to recreate the environment
     that I used to have back then. Other than those, I also have fond memories of the MSN Messenger with 
