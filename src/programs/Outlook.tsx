@@ -1,6 +1,6 @@
 import styles from "./Outlook.module.css";
 import mailto from "../../assets/toolbar/mailto.png";
-import send from "../../assets/toolbar/send.png";
+import send from "../../assets/toolbar/sendmail.png";
 import Image from "next/image";
 import cut from "../../assets/toolbar/cut.png";
 import copy from "../../assets/toolbar/copy.png";
