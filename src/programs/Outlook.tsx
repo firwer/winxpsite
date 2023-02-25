@@ -28,8 +28,8 @@ const Outlook = () => {
   const TO_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL;
   const axios = require("axios");
   const captchaRef = React.useRef(null);
-  const emailRef = React.useRef<HTMLTextAreaElement>(null);
-  const subjectRef = React.useRef<HTMLTextAreaElement>(null);
+  const emailRef = React.useRef<HTMLInputElement>(null);
+  const subjectRef = React.useRef<HTMLInputElement>(null);
   const messageRef = React.useRef<HTMLTextAreaElement>(null);
   const sendEmail = async () => {
     if (from !== "" && subject !== "") {
