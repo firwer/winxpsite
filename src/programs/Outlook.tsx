@@ -9,7 +9,6 @@ import undo from "../../assets/toolbar/undo.png";
 import check from "../../assets/toolbar/check.png";
 import spelling from "../../assets/toolbar/spelling.png";
 import { useState } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
 import { v4 as uuidv4 } from "uuid";
 import React from "react";
 import { AppDirectory } from "@/appData";
