@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 
+const nextjsDistDir = join("src", require("./src/next.config.js").distDir);
+
 module.exports = {
   reactStrictMode: true,
   webpack: (config, options) => {
@@ -17,3 +19,13 @@ module.exports = {
     domains: ["img.shields.io", "pohwp.dev", "www.pohwp.dev"],
   },
 };
+
+const nextjsServer = next({
+  dev: isDev,
+  conf: {
+    distDir: nextjsDistDir,
+    images: {
+      domains: ["firebasestorage.googleapis.com"],
+    },
+  },
+});

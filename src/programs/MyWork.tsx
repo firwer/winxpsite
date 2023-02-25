@@ -9,6 +9,10 @@ import github_w from "../../assets/github_w.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Carousel from "components/Carousel/Carousel";
+const loaderProp = ({ src }: any) => {
+  return src;
+};
+
 const MyWork = () => {
   const [currDisplay, setCurrDisplay] = useState<WorkContent>({
     id: 0,
@@ -53,7 +57,7 @@ const MyWork = () => {
                     src={badge}
                     width={50}
                     height={35}
-                    crossOrigin="anonymous"
+                    loader={loaderProp}
                   />
                 </div>
               ))}
@@ -106,7 +110,7 @@ const MyWork = () => {
                       src={tech}
                       width={50}
                       height={40}
-                      crossOrigin="anonymous"
+                      loader={loaderProp}
                     />
                   </div>
                 ))}
