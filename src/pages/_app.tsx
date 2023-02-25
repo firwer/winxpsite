@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import localFont from "@next/font/local";
 import { Provider } from "react-redux";
 import store from "@/redux/store";
+import { Analytics } from '@vercel/analytics/react';
 const Tahoma = localFont({
   src: [
     {
@@ -23,6 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <main className={Tahoma.className}>
       <Provider store={store}>
         <Component {...pageProps} />
+        <Analytics />
       </Provider>
     </main>
   );
