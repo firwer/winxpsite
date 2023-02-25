@@ -14,6 +14,6 @@ module.exports = {
     BASE_URL: process.env.BASE_URL,
   },
   images: {
-    domains: ["img.shields.io"],
+    domains: ["img.shields.io", "pohwp.dev", "www.pohwp.dev"],
   },
 };
