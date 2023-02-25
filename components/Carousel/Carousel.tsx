@@ -2,6 +2,7 @@ import { useState } from "react";
 import { StaticImageData } from "next/image";
 import Image from "next/image";
 import styles from "./Carousel.module.css";
+import Spinner from "components/Spinner/Spinner";
 interface Props {
   images: StaticImageData[];
 }
@@ -23,11 +24,21 @@ const Carousel = ({ images }: Props) => {
       setCurrentImage((prev) => prev + 1);
     }
   };
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+  };
 
   return (
     <div className={styles.carousel}>
       <div className={styles.imageContainer}>
-        <Image src={images[currentImage]} alt="carousel" />
+        {isLoading && <Spinner />}
+        <Image
+          src={images[currentImage]}
+          alt="carousel"
+          onLoadingComplete={handleLoadingComplete}
+        />
       </div>
       <div className={styles.controls}>
         <div
