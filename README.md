@@ -1,8 +1,13 @@
 ## My Personal Portfolio Website Based off Windows XP Styling
 
-This Website is built with Next.JS, CSS and whatever that make sense
+This Website is built with Next.JS, Redux, HTML, CSS and whatever that make sense
 
 Built it for nostalgia and as a tribute to my software dev journey since my visual basic days
-### More Information Coming Soon
-![image](https://user-images.githubusercontent.com/7589432/221338945-2e92e6b0-2986-4a17-ae64-fee87768929d.png)
-Preview as of 25/2/23
+
+### View My Website Here: [pohwp.dev](https://pohwp.dev)
+
+Currently Deployed on Vercel
+
+![image](https://user-images.githubusercontent.com/7589432/221364647-1c52a657-8340-4151-ae02-baf3f467e868.png)
+
+More work still needs to be done.
