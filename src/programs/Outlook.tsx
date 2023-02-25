@@ -10,9 +10,16 @@ import check from "../../assets/toolbar/check.png";
 import spelling from "../../assets/toolbar/spelling.png";
 import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import { v4 as uuidv4 } from "uuid";
 import React from "react";
+import { AppDirectory } from "@/appData";
+import { addTab } from "@/redux/tabSlice";
+import store from "@/redux/store";
+import { useSelector } from "react-redux";
+import { RootState } from "@/types";
 
 const Outlook = () => {
+  const currTabID = useSelector((state: RootState) => state.tab.id);
   const [from, setFrom] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
@@ -21,9 +28,11 @@ const Outlook = () => {
   const TO_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL;
   const axios = require("axios");
   const captchaRef = React.useRef(null);
+  const emailRef = React.useRef<HTMLTextAreaElement>(null);
+  const subjectRef = React.useRef<HTMLTextAreaElement>(null);
+  const messageRef = React.useRef<HTMLTextAreaElement>(null);
   const sendEmail = async () => {
     if (from !== "" && subject !== "") {
-      console.log(API_KEY);
       await axios({
         method: "post",
         url: `https://api.mailgun.net/v3/pohwp.dev/messages`,
@@ -39,13 +48,31 @@ const Outlook = () => {
         },
       })
         .then(() => {
-          console.log("Email sent successfully!");
+          const newTab = {
+            ...AppDirectory.get(7),
+            id: uuidv4(),
+            zIndex: currTabID,
+            title: "Outlook - Message Sent!",
+            message: "Your message has been sent! I will get back to you soon!",
+          };
+          console.log(newTab);
+          store.dispatch(addTab(newTab));
+          if (emailRef.current !== null) {
+            emailRef.current.value = "";
+            setFrom("");
+          }
+          if (subjectRef.current !== null) {
+            subjectRef.current.value = "";
+            setSubject("");
+          }
+          if (messageRef.current !== null) {
+            messageRef.current.value = "";
+            setMessage("");
+          }
         })
         .catch(() => {
           console.error("Error sending email:");
         });
-    } else {
-      console.log("Please fill in all fields!");
     }
   };
 
@@ -177,6 +204,7 @@ const Outlook = () => {
             />
             <input
               className={styles.textfield}
+              ref={emailRef}
               placeholder="Enter your email address"
               onChange={(e) => {
                 setFrom(e.target.value);
@@ -185,6 +213,7 @@ const Outlook = () => {
             />
             <input
               className={styles.textfield}
+              ref={subjectRef}
               placeholder="What is this message/email regarding?"
               onChange={(e) => {
                 setSubject(e.target.value);
@@ -197,6 +226,7 @@ const Outlook = () => {
       <div className={styles.richfield}>
         <textarea
           draggable={false}
+          ref={messageRef}
           className={styles.richtextbox}
           onChange={(e) => {
             setMessage(e.target.value);

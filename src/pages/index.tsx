@@ -21,6 +21,7 @@ import { useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 import Outlook from "@/programs/Outlook";
 import MyWork from "@/programs/MyWork";
+import MsgBox from "components/MsgBox/MsgBox";
 export default function Home() {
   const Tabs = useSelector((state: RootState) => state.tab.tray);
   const currTabID = useSelector((state: RootState) => state.tab.id);
@@ -116,12 +117,25 @@ export default function Home() {
                 key={tab.id}
                 id={tab.id}
                 title={tab.title}
-                width={"500"}
+                message={tab.message}
                 icon={tab.Icon}
                 zIndex={tab.zIndex}
                 programType={tab.program}
+                prompt={tab.prompt}
               >
-                {tab.program === App.MYWORK ? <MyWork /> : <Outlook />}
+                {tab.program === App.MYWORK ? (
+                  <MyWork />
+                ) : tab.program === App.OUTLOOK ? (
+                  <Outlook />
+                ) : tab.program === App.ERROR ? (
+                  <p>{tab.message}</p>
+                ) : tab.program === App.INFO ? (
+                  <MsgBox id={tab.id} message={tab.message} icon={tab.Icon}/>
+                ) : tab.program === App.WARNING ? (
+                  <p>{tab.message}</p>
+                ) : tab.program === App.HELP ? (
+                  <p>{tab.message}</p>
+                ) : null}
               </WinForm>
             );
           })}

@@ -1,0 +1,22 @@
+.resizable {
+  position: relative;
+  min-height: 400px;
+  min-width: 500px;
+  resize: both;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.resizable .resize-handle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #ccc;
+  bottom: 0;
+  right: 0;
+  cursor: nwse-resize;
+}
+
+.resizable .resize-handle:hover {
+  background-color: transparent;
+}

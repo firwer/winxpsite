@@ -3,10 +3,12 @@ import { StaticImageData } from "next/image";
 export type Tab = {
   id: number;
   title: string;
+  message: string;
   Icon: StaticImageData;
   isMinimized: boolean;
   zIndex: number;
   program: App;
+  prompt: boolean;
 };
 
 export type RootState = {
@@ -23,6 +25,10 @@ export enum App {
   OUTLOOK,
   MYDOCUMENT,
   MYBLOG,
+  ERROR,
+  INFO,
+  HELP,
+  WARNING,
 }
 
 export enum WorkType {

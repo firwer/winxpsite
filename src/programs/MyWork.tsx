@@ -19,13 +19,6 @@ const MyWork = () => {
     techstack: [],
     overview: "",
   });
-  var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 5,
-  };
   const [gitIcon, setgitIcon] = useState(github_w);
   return (
     <div className={styles.main}>

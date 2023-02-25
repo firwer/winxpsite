@@ -1,4 +1,8 @@
 import { App, Tab, WorkContent, WorkFile, WorkType } from "src/types";
+import error from "../../assets/dialog/error.png";
+import info from "../../assets/dialog/info.png";
+import warning from "../../assets/dialog/warning.png";
+import help from "../../assets/dialog/help.png";
 import cmd from "../../assets/cmd.png";
 import mycomputer from "../../assets/mycomputer.png";
 import folder_plain from "../../assets/folder_plain.png";
@@ -48,6 +52,8 @@ import cg5_2 from "../../assets/work/cg2111/5.jpg";
 import cg6_2 from "../../assets/work/cg2111/6.jpg";
 import lul from "../../assets/work/lul.jpg";
 import butterfly from "../../assets/butterfly.png";
+import MyWork from "@/programs/MyWork";
+import Outlook from "@/programs/Outlook";
 
 export const TechIcon = {
   REACT:
@@ -103,10 +109,12 @@ export const AppDirectory: Map<number, Tab> = new Map([
     {
       id: 0,
       title: "Outlook Express",
+      message: "",
       Icon: outlook,
       isMinimized: false,
       zIndex: 0,
       program: App.OUTLOOK,
+      prompt: false,
     },
   ],
   [
@@ -114,10 +122,12 @@ export const AppDirectory: Map<number, Tab> = new Map([
     {
       id: 0,
       title: "My Work",
+      message: "",
       Icon: cmd,
       isMinimized: false,
       zIndex: 0,
       program: App.MYWORK,
+      prompt: false,
     },
   ],
   [
@@ -125,10 +135,12 @@ export const AppDirectory: Map<number, Tab> = new Map([
     {
       id: 0,
       title: "My Blog",
+      message: "",
       Icon: mycomputer,
       isMinimized: false,
       zIndex: 0,
       program: App.MYBLOG,
+      prompt: false,
     },
   ],
   [
@@ -136,10 +148,64 @@ export const AppDirectory: Map<number, Tab> = new Map([
     {
       id: 0,
       title: "My Documents",
+      message: "",
       Icon: folder_plain,
       isMinimized: false,
       zIndex: 0,
       program: App.MYDOCUMENT,
+      prompt: false,
+    },
+  ],
+  [
+    5,
+    {
+      id: 0,
+      title: "Error",
+      message: "",
+      Icon: error,
+      isMinimized: false,
+      zIndex: 0,
+      program: App.ERROR,
+      prompt: true,
+    },
+  ],
+  [
+    6,
+    {
+      id: 0,
+      title: "Warning",
+      message: "",
+      Icon: warning,
+      isMinimized: false,
+      zIndex: 0,
+      program: App.WARNING,
+      prompt: true,
+    },
+  ],
+  [
+    7,
+    {
+      id: 0,
+      title: "Info",
+      message: "",
+      Icon: info,
+      isMinimized: false,
+      zIndex: 0,
+      program: App.INFO,
+      prompt: true,
+    },
+  ],
+  [
+    8,
+    {
+      id: 0,
+      title: "Help",
+      message: "",
+      Icon: help,
+      isMinimized: false,
+      zIndex: 0,
+      program: App.HELP,
+      prompt: true,
     },
   ],
 ]);

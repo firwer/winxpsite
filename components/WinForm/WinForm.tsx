@@ -13,16 +13,19 @@ import {
 import store from "@/redux/store";
 import { useSelector } from "react-redux";
 import { App, RootState } from "@/types";
+import { Resizable } from "react-resizable";
+import ResizableComponent from "@/util/Resizer/Resizer";
 
 const unfocusedAdjustment = "brightness(1.05)";
 const WinForm = (props: {
   id: number;
   title: string;
-  width: string;
+  message: string;
   children: ReactNode;
   icon: StaticImageData;
   zIndex: number;
   programType: App;
+  prompt: boolean;
 }) => {
   const [isMaximized, setMaximised] = useState(false);
   const [isMinimized, setMinimised] = useState(false);
@@ -66,14 +69,20 @@ const WinForm = (props: {
       onStop: handleStop,
     };
   }
+  const promptDisplay = "inline";
+  const promptWidth = "450px";
+  const promptHeight = "auto";
+  const normalDisplay = isMinimized ? "none" : "inline";
+  const normalWidth = isMaximized ? "100%" : "800px";
+  const normalHeight = isMaximized ? "100%" : "650px";
   return (
     <Draggable {...draggableProps}>
       <div
         style={{
           position: "absolute",
-          display: isMinimized ? "none" : "inline",
-          width: isMaximized ? "100%" : "750px",
-          height: isMaximized ? "100%" : "650px",
+          display: props.prompt ? promptDisplay : normalDisplay,
+          width: props.prompt ? promptWidth : normalWidth,
+          height: props.prompt ? promptHeight : normalHeight,
           zIndex: props.zIndex,
         }}
         className={styles.window}
@@ -95,30 +104,36 @@ const WinForm = (props: {
             }}
             className="handle"
           >
-            <Image
-              width={20}
-              height={20}
-              alt="icon"
-              src={props.icon.src}
-              className={styles.icon}
-            />
+            {!props.prompt && (
+              <Image
+                width={20}
+                height={20}
+                alt="icon"
+                src={props.icon.src}
+                className={styles.icon}
+              />
+            )}
             <div className={styles.title}>{props.title}</div>
           </div>
           <div className={styles.titlecontrols}>
-            <div
-              onClick={handleMinimize}
-              style={{
-                filter: currTabID == props.id ? "" : unfocusedAdjustment,
-              }}
-              className={styles.minimise}
-            />
-            <div
-              onClick={handleMaximize}
-              style={{
-                filter: currTabID == props.id ? "" : unfocusedAdjustment,
-              }}
-              className={isMaximized ? styles.resize : styles.maximise}
-            />
+            {!props.prompt && (
+              <div
+                onClick={handleMinimize}
+                style={{
+                  filter: currTabID == props.id ? "" : unfocusedAdjustment,
+                }}
+                className={styles.minimise}
+              />
+            )}
+            {!props.prompt && (
+              <div
+                onClick={handleMaximize}
+                style={{
+                  filter: currTabID == props.id ? "" : unfocusedAdjustment,
+                }}
+                className={isMaximized ? styles.resize : styles.maximise}
+              />
+            )}
             <div
               onClick={handleClose}
               style={{
@@ -139,11 +154,13 @@ const WinForm = (props: {
           }
         >
           <div className={styles.windowsbody}>
-            <WinToolBar
-              title={props.title}
-              icon={props.icon}
-              programType={props.programType}
-            />
+            {!props.prompt && (
+              <WinToolBar
+                title={props.title}
+                icon={props.icon}
+                programType={props.programType}
+              />
+            )}
             {props.children}
           </div>
         </div>

@@ -101,7 +101,9 @@ const StartBar = () => {
           {startMenuOpen && <StartMenu menuControl={setStartMenuOpen} />}
         </div>
         <div className={styles.tabbar}>
-          {Tabs.map((_item) => renderTabs(_item.title, _item.Icon, _item.id))}
+          {Tabs.filter((tab) => tab.prompt !== true).map((_item) =>
+            renderTabs(_item.title, _item.Icon, _item.id)
+          )}
         </div>
         <div className={styles.icontray}>
           <div className={styles.iconrow}>

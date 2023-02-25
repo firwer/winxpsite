@@ -1,0 +1,35 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 5px 10px 5px;
+  justify-content: flex-start;
+  background-color: #ece9d8;
+  align-items: center;
+}
+
+.top {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 10px;
+  justify-content: flex-start;
+  gap: 25px;
+}
+
+.button {
+  width: 80px;
+  height: 22px;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: black -1px -1px 1px inset;
+  margin: 20px;
+}
+
+.message {
+  display: flex;
+  font-size: 13px;
+  justify-content: center;
+  align-items: flex-start;
+}
