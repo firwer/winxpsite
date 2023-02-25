@@ -53,6 +53,7 @@ const MyWork = () => {
                     src={badge}
                     width={50}
                     height={35}
+                    crossOrigin="anonymous"
                   />
                 </div>
               ))}
@@ -105,6 +106,7 @@ const MyWork = () => {
                       src={tech}
                       width={50}
                       height={40}
+                      crossOrigin="anonymous"
                     />
                   </div>
                 ))}

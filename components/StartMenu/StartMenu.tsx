@@ -39,7 +39,7 @@ const StartMenu = ({ menuControl }: StartMenuProps) => {
   };
 
   const handleOpenResume = () => {
-    window.open("/resume.pdf", "_blank");
+    window.open("./static/Resume.pdf", "_blank");
   };
 
   const handleOpenLinkedin = () => {
