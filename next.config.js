@@ -16,18 +16,4 @@ module.exports = {
   images: {
     domains: ["img.shields.io", "pohwp.dev", "www.pohwp.dev"],
   },
-  async headers() {
-    return [
-      {
-        // Set CSP header for all pages
-        source: "/(.*)",
-        headers: [
-          {
-            key: "Content-Security-Policy",
-            value: "default-src 'self' vitals.vercel-insights.com;",
-          },
-        ],
-      },
-    ];
-  },
 };
