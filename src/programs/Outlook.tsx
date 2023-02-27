@@ -231,7 +231,7 @@ const Outlook = () => {
             setMessage(e.target.value);
           }}
           id="text24"
-          placeholder="Type your message here...(Maybe you want to hire me for a job or something?)"
+          placeholder="Type your message here...(Share with me something interesting or a feedback?)"
         ></textarea>
       </div>
     </div>

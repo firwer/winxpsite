@@ -79,6 +79,8 @@ const WinForm = (props: {
     <Draggable {...draggableProps}>
       <div
         style={{
+          top: isMaximized ? "0" : "10%",
+          left: isMaximized ? "0" : "20%",
           position: "absolute",
           display: props.prompt ? promptDisplay : normalDisplay,
           width: props.prompt ? promptWidth : normalWidth,
