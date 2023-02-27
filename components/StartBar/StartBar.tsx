@@ -28,7 +28,7 @@ const getTime = () => {
   if (min < 10) {
     min = 0 + min;
   }
-  return `${hour}:${min} ${hourPostFix}`;
+  return `${hour}:${String(min).padStart(2, "0")} ${hourPostFix}`;
 };
 
 const StartBar = () => {

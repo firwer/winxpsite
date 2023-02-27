@@ -61,18 +61,17 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-
   width: 80%;
   height: 100%;
 }
 
 .icontray {
-  width: 160px;
+  width: 170px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 7px;
+  padding: 10px;
   background: linear-gradient(
     rgb(12, 89, 185) 1%,
     rgb(19, 158, 233) 6%,
@@ -94,8 +93,13 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
   padding: 0px;
   margin: 0px;
   width: 90px;
+}
+
+@media screen and (max-width: 903px) {
+  .icontray {
+    width: 270px;
+  }
 }
