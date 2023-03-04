@@ -1,0 +1,18 @@
+.icon_main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0px;
+}
+
+.icon_main:hover .text {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+}

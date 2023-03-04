@@ -12,7 +12,7 @@ import cmd from "../../assets/cmd.png";
 import solitare from "../../assets/solitaire.png";
 import linkedin from "../../assets/linkedin.png";
 import WinForm from "components/WinForm/WinForm";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import store from "@/redux/store";
 import { AppDirectory } from "@/appData";
 import { App, RootState, Tab } from "@/types";
@@ -22,6 +22,7 @@ import { v4 as uuidv4 } from "uuid";
 import Outlook from "@/programs/Outlook";
 import MyWork from "@/programs/MyWork";
 import MsgBox from "components/MsgBox/MsgBox";
+import Welcome from "@/programs/Welcome";
 export default function Home() {
   const Tabs = useSelector((state: RootState) => state.tab.tray);
   const currTabID = useSelector((state: RootState) => state.tab.id);
@@ -127,6 +128,8 @@ export default function Home() {
                   <MyWork />
                 ) : tab.program === App.OUTLOOK ? (
                   <Outlook />
+                ) : tab.program === App.WELCOME ? (
+                  <Welcome />
                 ) : tab.program === App.ERROR ? (
                   <p>{tab.message}</p>
                 ) : tab.program === App.INFO ? (

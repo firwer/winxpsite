@@ -29,6 +29,7 @@ export enum App {
   INFO,
   HELP,
   WARNING,
+  WELCOME,
 }
 
 export enum WorkType {

@@ -1,11 +1,22 @@
 import { AppDirectory } from "@/appData";
-import { Tab } from "@/types";
+import { App, Tab } from "@/types";
 import { createSlice } from "@reduxjs/toolkit";
-
+import help from "../../assets/dialog/help.png";
 export const tabtraySlice = createSlice({
   name: "tab",
   initialState: {
-    tray: [] as Tab[],
+    tray: [
+      {
+        id: 0,
+        title: "Quick Start Guide",
+        message: "",
+        Icon: help,
+        isMinimized: false,
+        zIndex: 0,
+        program: App.WELCOME,
+        prompt: false,
+      },
+    ] as Tab[],
     id: 0,
     currentFocusedTab: -1,
     currentZIndex: 0,

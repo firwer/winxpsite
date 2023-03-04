@@ -1,0 +1,43 @@
+.main {
+  background-color: #6375d6;
+  height: 100%;
+  width: 100%;
+  padding: 0px 6px 6px 6px;
+  background-image: url("../../assets/clipboard_shadow.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  outline: none;
+  padding: 20px;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+}
+
+.welcome_text {
+  color: #d6dff5;
+  font-weight: bold;
+  margin: 0px;
+  padding: 0px;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: #d6dff5;
+  font-weight: 500;
+  margin: 0px;
+  padding: 0px;
+}
+
+.leftpanel,
+.rightpanel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 400px;
+  height: 100%;
+  padding: 15px;
+  margin: 0px;
+}

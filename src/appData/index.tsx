@@ -105,6 +105,19 @@ export const TechIcon = {
 
 export const AppDirectory: Map<number, Tab> = new Map([
   [
+    0,
+    {
+      id: 0,
+      title: "Welcome To My Website - Quick Start Guide",
+      message: "",
+      Icon: help,
+      isMinimized: false,
+      zIndex: 0,
+      program: App.WELCOME,
+      prompt: false,
+    },
+  ],
+  [
     1,
     {
       id: 0,
