@@ -32,8 +32,8 @@ const Carousel = ({ images }: Props) => {
 
   return (
     <div className={styles.carousel}>
+      {isLoading && <Spinner />}
       <div className={styles.imageContainer}>
-        {isLoading && <Spinner />}
         <Image
           src={images[currentImage]}
           alt="carousel"

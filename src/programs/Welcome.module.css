@@ -8,6 +8,7 @@
   background-position: right bottom;
   outline: none;
   padding: 20px;
+  overflow: auto;
 }
 
 .content {
@@ -18,8 +19,14 @@
 .welcome_text {
   color: #d6dff5;
   font-weight: bold;
-  margin: 0px;
-  padding: 0px;
+}
+
+.subtitle_header {
+  color: #d6dff5;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .subtitle {
@@ -38,6 +45,19 @@
   justify-content: flex-start;
   width: 400px;
   height: 100%;
+  padding: 15px;
+  margin: 0px;
+}
+
+.profile_pic {
+  object-fit: cover;
+  border-radius: 20%;
+}
+
+.pic_col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   padding: 15px;
   margin: 0px;
 }
