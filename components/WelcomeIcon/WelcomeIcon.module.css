@@ -11,6 +11,10 @@
   text-decoration: underline;
 }
 
+.icon_main:hover > .icon {
+  cursor: pointer;
+}
+
 .text {
   font-size: 16px;
   font-weight: 400;

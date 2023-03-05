@@ -42,7 +42,7 @@ forces you become adaptable to new situations and learn to be more independent a
 const INTERESTS2 = `Other than traveling, I love trekking and cycling, and as a challenge to myself, I decided 
 to embark on a journey to the Everest Base Camp. After a 130KM, 2504M grueling vertical ascend from 
 Tenzing-Hillary Airport, widely regarded as some of the world’s most dangerous airports, I made it 
-with a friend of mine and our guide. The entire experience was unreal as I met and struck up 
+with a friend of mine and our guide. The entire experience was spectacular as I have also met and struck up 
 conversations with trekkers from all walks of life and background, and we all had a common goal 
 of reaching the top of the base camp.`;
 
@@ -85,7 +85,7 @@ const Welcome = ({ id }: props) => {
       {!aboutmeView ? (
         <div>
           <h3 className={styles.welcome_text}>
-            Welcome To My Personal Website
+            Welcome To Wei Pin's Personal Website
           </h3>
           <p className={styles.subtitle}>
             Learn more about me by clicking any of the icons below to get
@@ -141,7 +141,7 @@ const Welcome = ({ id }: props) => {
               />
               <WelcomeIcon
                 img={users}
-                text={"My Blog"}
+                text={"My Blog (Coming Soon)"}
                 tooltip="My personal thoughts and experiences"
               />
               <WelcomeIcon
