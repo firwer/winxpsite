@@ -9,6 +9,7 @@ export type Tab = {
   zIndex: number;
   program: App;
   prompt: boolean;
+  backBtnActive: boolean;
 };
 
 export type RootState = {
@@ -17,6 +18,9 @@ export type RootState = {
     id: number;
     currentFocusedTab: number;
     currentZIndex: number;
+  };
+  system: {
+    backactive: boolean;
   };
 };
 

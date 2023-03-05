@@ -115,6 +115,7 @@ export const AppDirectory: Map<number, Tab> = new Map([
       zIndex: 0,
       program: App.WELCOME,
       prompt: false,
+      backBtnActive: false,
     },
   ],
   [
@@ -128,6 +129,7 @@ export const AppDirectory: Map<number, Tab> = new Map([
       zIndex: 0,
       program: App.OUTLOOK,
       prompt: false,
+      backBtnActive: false,
     },
   ],
   [
@@ -141,6 +143,7 @@ export const AppDirectory: Map<number, Tab> = new Map([
       zIndex: 0,
       program: App.MYWORK,
       prompt: false,
+      backBtnActive: false,
     },
   ],
   [
@@ -154,6 +157,7 @@ export const AppDirectory: Map<number, Tab> = new Map([
       zIndex: 0,
       program: App.MYBLOG,
       prompt: false,
+      backBtnActive: false,
     },
   ],
   [
@@ -167,6 +171,7 @@ export const AppDirectory: Map<number, Tab> = new Map([
       zIndex: 0,
       program: App.MYDOCUMENT,
       prompt: false,
+      backBtnActive: false,
     },
   ],
   [
@@ -180,6 +185,7 @@ export const AppDirectory: Map<number, Tab> = new Map([
       zIndex: 0,
       program: App.ERROR,
       prompt: true,
+      backBtnActive: false,
     },
   ],
   [
@@ -193,6 +199,7 @@ export const AppDirectory: Map<number, Tab> = new Map([
       zIndex: 0,
       program: App.WARNING,
       prompt: true,
+      backBtnActive: false,
     },
   ],
   [
@@ -206,6 +213,7 @@ export const AppDirectory: Map<number, Tab> = new Map([
       zIndex: 0,
       program: App.INFO,
       prompt: true,
+      backBtnActive: false,
     },
   ],
   [
@@ -219,6 +227,7 @@ export const AppDirectory: Map<number, Tab> = new Map([
       zIndex: 0,
       program: App.HELP,
       prompt: true,
+      backBtnActive: false,
     },
   ],
 ]);

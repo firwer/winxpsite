@@ -2,6 +2,8 @@ import { AppDirectory } from "@/appData";
 import { App, Tab } from "@/types";
 import { createSlice } from "@reduxjs/toolkit";
 import help from "../../assets/dialog/help.png";
+
+// Redux Reducer for Tab/Windows State Mangagement
 export const tabtraySlice = createSlice({
   name: "tab",
   initialState: {
@@ -15,6 +17,7 @@ export const tabtraySlice = createSlice({
         zIndex: 0,
         program: App.WELCOME,
         prompt: false,
+        backBtnActive: false,
       },
     ] as Tab[],
     id: 0,
@@ -51,9 +54,19 @@ export const tabtraySlice = createSlice({
       }
       state.currentFocusedTab = action.payload.id;
     },
+    setBackBtn: (state, action) => {
+      const index = state.tray.findIndex((tab) => tab.id === action.payload.id);
+      state.tray[index].backBtnActive = action.payload.backBtnActive;
+    },
   },
 });
 
-export const { addTab, removeTab, minimizeTab, maximizeTab, setFocusedTab } =
-  tabtraySlice.actions;
+export const {
+  addTab,
+  removeTab,
+  minimizeTab,
+  maximizeTab,
+  setFocusedTab,
+  setBackBtn,
+} = tabtraySlice.actions;
 export default tabtraySlice.reducer;

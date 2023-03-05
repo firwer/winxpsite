@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useRef, useState } from "react";
+import { cloneElement, ReactNode, useEffect, useRef, useState } from "react";
 import Draggable from "react-draggable";
 import styles from "./WinForm.module.css";
 import WinToolBar from "components/WinToolbar/WinToolBar";
@@ -161,6 +161,7 @@ const WinForm = (props: {
                 title={props.title}
                 icon={props.icon}
                 programType={props.programType}
+                id={props.id}
               />
             )}
             {props.children}

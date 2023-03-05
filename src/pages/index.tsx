@@ -125,11 +125,11 @@ export default function Home() {
                 prompt={tab.prompt}
               >
                 {tab.program === App.MYWORK ? (
-                  <MyWork />
+                  <MyWork id={tab.id} />
                 ) : tab.program === App.OUTLOOK ? (
                   <Outlook />
                 ) : tab.program === App.WELCOME ? (
-                  <Welcome />
+                  <Welcome id={tab.id} />
                 ) : tab.program === App.ERROR ? (
                   <p>{tab.message}</p>
                 ) : tab.program === App.INFO ? (

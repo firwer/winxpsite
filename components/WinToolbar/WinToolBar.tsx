@@ -9,14 +9,27 @@ import folders from "../../assets/toolbar/folders.png";
 import go from "../../assets/toolbar/go.png";
 import thumbnail from "../../assets/toolbar/thumbnail.png";
 import tooldropdown from "../../assets/toolbar/tooldropdown.png";
-import { App } from "@/types";
+import { App, RootState } from "@/types";
+import store from "@/redux/store";
+import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { setBackBtn } from "@/redux/tabSlice";
 interface props {
   title: string;
   icon: StaticImageData;
   programType: App;
+  id: number;
 }
 
-const WinToolBar = ({ title, icon, programType }: props) => {
+const WinToolBar = ({ title, icon, programType, id }: props) => {
+  const handleBackClick = () => {
+    store.dispatch(setBackBtn({ id: id, backBtnActive: false }));
+  };
+  const backBtnActive = useSelector(
+    (state: RootState) =>
+      state.tab.tray[state.tab.tray.findIndex((tab) => tab.id === id)]
+        .backBtnActive
+  );
   return (
     <>
       <div className={styles.topwindowsbar}>
@@ -45,9 +58,15 @@ const WinToolBar = ({ title, icon, programType }: props) => {
       {programType !== App.OUTLOOK && (
         <div>
           <div className={styles.toolbar_icon}>
-            <div className={styles.back}>
+            <div
+              className={
+                backBtnActive ? styles.back_enabled : styles.back_disabled
+              }
+              onClick={handleBackClick}
+            >
               <Image alt="back" width={25} height={25} src={back.src} />
               <p style={{ margin: "0 5px" }}>Back</p>
+              <hr className={styles.button_line} />
               <Image
                 style={{ margin: "0 4px" }}
                 alt="arrow_down"

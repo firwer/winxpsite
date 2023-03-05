@@ -1,7 +1,7 @@
 import { TechIcon, WorkAccordionTitles } from "@/appData";
-import { WorkContent } from "@/types";
+import { RootState, WorkContent } from "@/types";
 import WinAccordion from "components/WinAccordion/WinAccordion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./MyWork.module.css";
 import Image from "next/image";
 import github from "../../assets/github.png";
@@ -9,11 +9,17 @@ import github_w from "../../assets/github_w.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Carousel from "components/Carousel/Carousel";
+import { useSelector } from "react-redux";
+import { setBackBtn } from "@/redux/tabSlice";
+import store from "@/redux/store";
 const loaderProp = ({ src }: any) => {
   return src;
 };
+interface Props {
+  id: number;
+}
 
-const MyWork = () => {
+const MyWork = ({ id }: Props) => {
   const [currDisplay, setCurrDisplay] = useState<WorkContent>({
     id: 0,
     title: "",
@@ -24,6 +30,29 @@ const MyWork = () => {
     overview: "",
   });
   const [gitIcon, setgitIcon] = useState(github_w);
+  const backBtnActive = useSelector(
+    (state: RootState) =>
+      state.tab.tray[state.tab.tray.findIndex((tab) => tab.id === id)]
+        .backBtnActive
+  );
+  useEffect(() => {
+    if (currDisplay.title !== "" && !backBtnActive) {
+      store.dispatch(setBackBtn({ id: id, backBtnActive: true }));
+    }
+  }, [currDisplay]);
+  useEffect(() => {
+    if (!backBtnActive) {
+      setCurrDisplay({
+        id: 0,
+        title: "",
+        date: "",
+        gitURL: "",
+        gallery: [],
+        techstack: [],
+        overview: "",
+      });
+    }
+  }, [backBtnActive]);
   return (
     <div className={styles.main}>
       <div className={styles.leftpanel}>

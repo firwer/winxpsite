@@ -9,18 +9,18 @@ import users from "../../assets/users.png";
 import butterfly from "../../assets/butterfly.png";
 import { AppDirectory } from "@/appData";
 import store from "@/redux/store";
-import { addTab } from "@/redux/tabSlice";
+import { addTab, setBackBtn } from "@/redux/tabSlice";
 import { v4 as uuidv4 } from "uuid";
 import { useSelector } from "react-redux";
 import { RootState } from "@/types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import userprofile from "../../assets/userprofile.jpg";
 import userprofile2 from "../../assets/userprofile2.jpg";
 import ebc1 from "../../assets/ebc1.jpeg";
 import ebc2 from "../../assets/ebc2.jpg";
 
-const INTRO = `Hi, I'm Poh Wei Pin, an aspiring technopreneur based in Singapore. I am 
+const INTRO = `Hi, I'm Wei Pin, an aspiring technopreneur based in Singapore. I am 
   currently a Computer Engineering Sophomore at the National University of Singapore and I am
   passionate about building innovative software solutions that solves problems.`;
 
@@ -55,16 +55,31 @@ and self-help, as those books usually contain a lot of valuable insights and sat
 about the lives of others.
 `;
 
-const Welcome = () => {
+interface props {
+  id: number;
+}
+
+const Welcome = ({ id }: props) => {
   const currTabID = useSelector((state: RootState) => state.tab.id);
+  const backBtnActive = useSelector(
+    (state: RootState) =>
+      state.tab.tray[state.tab.tray.findIndex((tab) => tab.id === id)]
+        .backBtnActive
+  );
+
+  const [aboutmeView, setAboutmeView] = useState(false);
+
   const handleRunApp = (e: number) => {
     const newTab = { ...AppDirectory.get(e), id: uuidv4(), zIndex: currTabID };
     store.dispatch(addTab(newTab));
   };
-  const [aboutmeView, setAboutmeView] = useState(false);
   const handleSwitchView = () => {
     setAboutmeView(true);
+    store.dispatch(setBackBtn({ id: id, backBtnActive: true }));
   };
+  useEffect(() => {
+    setAboutmeView(backBtnActive);
+  }, [backBtnActive]);
   return (
     <div className={styles.main}>
       {!aboutmeView ? (
