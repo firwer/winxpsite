@@ -8,7 +8,8 @@ Built it for nostalgia and as a tribute to my software dev journey since my visu
 
 Currently Deployed on Vercel
 
-![image](https://user-images.githubusercontent.com/7589432/221364647-1c52a657-8340-4151-ae02-baf3f467e868.png)
+![winxp](https://user-images.githubusercontent.com/7589432/223458352-89742c9d-3528-4608-a124-f6bd3a9d3ef5.gif)
+
 
 More work still needs to be done.
 
