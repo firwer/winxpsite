@@ -52,9 +52,9 @@ import cg5_2 from "../../assets/work/cg2111/5.jpg";
 import cg6_2 from "../../assets/work/cg2111/6.jpg";
 import lul from "../../assets/work/lul.jpg";
 import butterfly from "../../assets/butterfly.png";
-import MyWork from "@/programs/MyWork";
-import Outlook from "@/programs/Outlook";
-
+import mr1 from "../../assets/mr1.jpg";
+import mr2 from "../../assets/mr2.jpg";
+import mrIcon from "../../assets/mr_icon.png";
 export const TechIcon = {
   REACT:
     "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB",
@@ -101,6 +101,8 @@ export const TechIcon = {
     "https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white",
   TELEGRAM:
     "https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white",
+  VUEJS:
+    "https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vue.js&logoColor=4FC08D",
 };
 
 export const AppDirectory: Map<number, Tab> = new Map([
@@ -392,6 +394,26 @@ export const WorkData = [
       checklist, customized IPPT training plan according to the user's current fitness level and a canteen 
       order pick up service in all army camps.`,
   },
+  {
+    id: 11,
+    title: "GDSC Mercy Relief CMS Portal (WIP)",
+    date: "Sept 2022 - Present",
+    gitURL: "",
+    techstack: [
+      TechIcon.NEXTJS,
+      TechIcon.TYPESCRIPT,
+      TechIcon.MONGODB,
+      TechIcon.MATERIALUI,
+      TechIcon.CSS,
+    ],
+    gallery: [mr1, mr2],
+    overview: `Currently, I am working as a frontend software developer for Google's Developer Student Club. We
+    are building a new CMS portal for Mercy Relief, a non-profit organization that supports disaster relief efforts
+    worldwide. The newly revamped CMS portal aims to provide a more user-friendly interface for the Mercy Relief 
+    team to manage their global campaigns, press release articles, and donation drives. Some areas I have contributed
+    but not limited to are the frontend development of the campaign creation page that consist of TinyMCE WYSIWYG 
+    editor, DragnDrop image upload, and API Integration with our backend.`,
+  },
 ] as WorkContent[];
 
 export const WorkAccordionContent = [
@@ -464,5 +486,12 @@ export const WorkAccordionContent = [
     icon: dsta,
     title: "DSTA CodeEXP 2022",
     content: WorkData[WorkData.findIndex((x) => x.id === 10)],
+  },
+  {
+    id: 11,
+    type: WorkType.SCHOOL,
+    icon: mrIcon,
+    title: "GDSC Mercy Relief CMS Portal",
+    content: WorkData[WorkData.findIndex((x) => x.id === 11)],
   },
 ] as WorkFile[];

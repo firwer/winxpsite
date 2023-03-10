@@ -3,7 +3,7 @@ import type { AppProps } from "next/app";
 import localFont from "@next/font/local";
 import { Provider } from "react-redux";
 import store from "@/redux/store";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 const Tahoma = localFont({
   src: [
     {
