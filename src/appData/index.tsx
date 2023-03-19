@@ -55,6 +55,8 @@ import butterfly from "../../assets/butterfly.png";
 import mr1 from "../../assets/mr1.jpg";
 import mr2 from "../../assets/mr2.jpg";
 import mrIcon from "../../assets/mr_icon.png";
+import MS from "../../assets/work/MS.png";
+import MS2 from "../../assets/work/MS2.png";
 export const TechIcon = {
   REACT:
     "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB",
@@ -279,8 +281,12 @@ export const WorkData = [
     date: "Oct - Nov 2022",
     gitURL: "",
     techstack: [TechIcon.TELEGRAM, TechIcon.PYTHON, TechIcon.GOOGLECLOUD],
-    gallery: [],
-    overview: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel`,
+    gallery: [MS, MS2],
+    overview: `I have developed a cloud inventory management system on gCloud with a Telegram bot 
+    interface to help manage my online software distribution business. The system is able to retrieve,
+    restock, validate and deliver digital goods to my customers. This system has helped me to automate
+    crucial portions of my business processes and save me a lot of time and effort while also reducing
+    the delivery time of my products. To date, this system has helped me to fulfil over 1000+ orders`,
   },
   {
     id: 4,
