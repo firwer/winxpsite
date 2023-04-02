@@ -278,7 +278,7 @@ export const WorkData = [
   {
     id: 3,
     title: "Telegram Bot - Digital Goods Management System",
-    date: "Oct - Nov 2022",
+    date: "Oct 2022 - Present",
     gitURL: "",
     techstack: [TechIcon.TELEGRAM, TechIcon.PYTHON, TechIcon.GOOGLECLOUD],
     gallery: [MS, MS2],
