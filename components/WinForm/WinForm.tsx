@@ -73,14 +73,15 @@ const WinForm = (props: {
   const promptWidth = "450px";
   const promptHeight = "auto";
   const normalDisplay = isMinimized ? "none" : "inline";
-  const normalWidth = isMaximized ? "100%" : "800px";
-  const normalHeight = isMaximized ? "100%" : "650px";
+  const normalWidth = isMaximized ? "100%" : "750px";
+  const normalHeight = isMaximized ? "calc(100% - 40px)" : "75%";
   return (
     <Draggable {...draggableProps}>
       <div
         style={{
           top: isMaximized ? "0" : "10%",
           left: isMaximized ? "0" : "20%",
+          bottom: isMaximized ? "20px" : "",
           position: "absolute",
           display: props.prompt ? promptDisplay : normalDisplay,
           width: props.prompt ? promptWidth : normalWidth,
