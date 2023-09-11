@@ -50,6 +50,11 @@ import cg3_2 from "../../assets/work/cg2111/3.jpg";
 import cg4_2 from "../../assets/work/cg2111/4.jpg";
 import cg5_2 from "../../assets/work/cg2111/5.jpg";
 import cg6_2 from "../../assets/work/cg2111/6.jpg";
+import cs2113_1 from "../../assets/work/cs2113/1.png";
+import cs2113_2 from "../../assets/work/cs2113/2.png";
+import sc_1 from "../../assets/work/supercanvas/1.png";
+import sc_2 from "../../assets/work/supercanvas/2.png";
+import sc_3 from "../../assets/work/supercanvas/3.png";
 import lul from "../../assets/work/lul.jpg";
 import butterfly from "../../assets/butterfly.png";
 import mr1 from "../../assets/mr1.jpg";
@@ -105,6 +110,12 @@ export const TechIcon = {
     "https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white",
   VUEJS:
     "https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vue.js&logoColor=4FC08D",
+  WEBPACK:
+    "https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=webpack&logoColor=white",
+  SUPABASE:
+    "https://img.shields.io/badge/Supabase-1E2E3B?style=for-the-badge&logo=supabase&logoColor=white",
+  CHATGPT:
+    "https://img.shields.io/badge/chatGPT-74aa9c?logo=openai&logoColor=white",
 };
 
 export const AppDirectory: Map<number, Tab> = new Map([
@@ -303,22 +314,26 @@ export const WorkData = [
       ee2026_6,
       ee2026_7,
     ],
-    overview: `For my EE2026 Digital Design Class, our pair built a Audio Visual System inclusive of both 
-      individual and teamwork components.\nOur team component consist of an interactive mouse-based 
-      drawing tool that includes a canvas, colour palette changer, rectangle drawing tool and brush 
-      size selection. For my individual portion, I came up with a P-Mod OLED digital stopwatch timer 
-      that have lapping and a whistle start/stop feature powered by Pmod MIC3`,
+    overview: `In my EE2026 Digital Design Class, my partner and I collaborated on an Audio Visual System 
+    project that encompassed both individual and team components. Our team's contribution consisted of an 
+    interactive mouse-based drawing tool, complete with a canvas, color palette changer, rectangle drawing 
+    tool, and brush size selection. For my individual role, I developed a P-Mod OLED digital stopwatch timer 
+    with lap timing functionality and a whistle-based start/stop feature, powered by the Pmod MIC3. 
+    Our project was one of the top performing projects in our cohort.`,
   },
   {
     id: 5,
-    title: "SAGE - Java-Based CLI Task Manager",
+    title: "MagnusStock - Java-Based CLI Inventory Management System",
     date: "Feb 2023",
-    gitURL: "https://github.com/firwer/ip",
+    gitURL: "https://github.com/firwer/tp",
     techstack: [TechIcon.JAVA],
-    gallery: [],
-    overview: `For my individual portion, I created SAGE, A Java-Based CLI developed based on the OOP concepts 
-      and SWE code quality principles. SAGE is a CLI that helps users to manage their tasks and deadlines. 
-      For our team component, (Not done yet, taking the module now)`,
+    gallery: [cs2113_1, cs2113_2],
+    overview: `As part of a collaborative course project, we have developed a Java-based CLI inventory management 
+    system called "Magnus Stock" that can perform CRUD operations on inventory items, generate history reports, 
+    and read/write inventory data in CSV format.Throughout this project, we gained valuable experience in crafting
+    comprehensive user and developer guides using Markdown, complemented by the inclusion of UML Diagrams for 
+    clarity. From the technical standpoint, our team demonstrated our ability to write clean, functional, and 
+    well-tested JUnit code that is able to handle exceptions and edge cases.`,
   },
   {
     id: 6,
@@ -402,8 +417,8 @@ export const WorkData = [
   },
   {
     id: 11,
-    title: "GDSC Mercy Relief CMS Portal (WIP)",
-    date: "Sept 2022 - Present",
+    title: "GDSC Mercy Relief CMS Portal",
+    date: "Sept 2022 - June 2023",
     gitURL: "",
     techstack: [
       TechIcon.NEXTJS,
@@ -413,12 +428,52 @@ export const WorkData = [
       TechIcon.CSS,
     ],
     gallery: [mr1, mr2],
-    overview: `Currently, I am working as a frontend software developer for Google's Developer Student Club. We
-    are building a new CMS portal for Mercy Relief, a non-profit organization that supports disaster relief efforts
+    overview: `I have worked as a frontend software developer for Google's Developer Student Club. Our team project aims to
+    build a new CMS portal for Mercy Relief, a non-profit organization that supports disaster relief efforts
     worldwide. The newly revamped CMS portal aims to provide a more user-friendly interface for the Mercy Relief 
     team to manage their global campaigns, press release articles, and donation drives. Some areas I have contributed
     but not limited to are the frontend development of the campaign creation page that consist of TinyMCE WYSIWYG 
     editor, DragnDrop image upload, and API Integration with our backend.`,
+  },
+  {
+    id: 12,
+    title: "Super Canvas Chrome Extension",
+    date: "Apr 2023 - Jul 2023",
+    gitURL: "https://github.com/firwer/supercanvas",
+    techstack: [
+      TechIcon.TYPESCRIPT,
+      TechIcon.WEBPACK,
+      TechIcon.MATERIALUI,
+      TechIcon.CSS,
+    ],
+    gallery: [sc_1, sc_2, sc_3],
+    overview: `Super Canvas is a Chrome Extension with over 200 active users, designed to improve the student 
+    experience and productivity on Canvas LMS. It provides valuable features like file preview, search, and 
+    instant download, along with an automatic deadline tracker for a better grasp of upcoming deadlines.`,
+  },
+  {
+    id: 13,
+    title: "InternWiz - Startup Internship Portal (WIP)",
+    date: "May 2023 - Present",
+    gitURL: "https://github.com/firwer/internwiz",
+    techstack: [
+      TechIcon.NEXTJS,
+      TechIcon.TYPESCRIPT,
+      TechIcon.SUPABASE,
+      TechIcon.CHATGPT,
+    ],
+    gallery: [],
+    overview: `InternWiz is your gateway to effortlessly discovering your ideal startup internship in Singapore. 
+    Our carefully curated platform offers a seamless experience, enabling students to embark on their dream 
+    internship journey with ease. Our platform features an infinitely scrolling dashboard that empowers you to 
+    explore a myriad of internship opportunities. You have the flexibility to refine your search based on 
+    parameters like startup size, industry, and funding stage, ensuring you find the perfect match for your 
+    aspirations. With InternWiz, you can conveniently add your preferred startups to your profile, making it 
+    simple to keep track of your interests. When you're ready to apply, we've streamlined the process for you. 
+    With just a single click, you can generate a personalized cold-email using our Language Model (LLM). 
+    This email is tailored to details from your resume, as well as essential information such as your major, 
+    year of study, and preferred internship role. InternWiz makes finding and applying for your dream startup 
+    internship an effortless and efficient experience, so you can focus on your career aspirations.`,
   },
 ] as WorkContent[];
 
@@ -499,5 +554,19 @@ export const WorkAccordionContent = [
     icon: mrIcon,
     title: "GDSC Mercy Relief CMS Portal",
     content: WorkData[WorkData.findIndex((x) => x.id === 11)],
+  },
+  {
+    id: 12,
+    type: WorkType.PERSONAL,
+    icon: emptyfile,
+    title: "Super CANVAS Chrome Extension",
+    content: WorkData[WorkData.findIndex((x) => x.id === 12)],
+  },
+  {
+    id: 13,
+    type: WorkType.PERSONAL,
+    icon: emptyfile,
+    title: "Digital Goods Management System",
+    content: WorkData[WorkData.findIndex((x) => x.id === 13)],
   },
 ] as WorkFile[];
