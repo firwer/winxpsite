@@ -559,7 +559,7 @@ export const WorkAccordionContent = [
     id: 12,
     type: WorkType.PERSONAL,
     icon: emptyfile,
-    title: "Super CANVAS Chrome Extension",
+    title: "Super Canvas Chrome Extension",
     content: WorkData[WorkData.findIndex((x) => x.id === 12)],
   },
   {
