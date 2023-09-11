@@ -55,7 +55,7 @@ import cs2113_2 from "../../assets/work/cs2113/2.png";
 import sc_1 from "../../assets/work/supercanvas/1.png";
 import sc_2 from "../../assets/work/supercanvas/2.png";
 import sc_3 from "../../assets/work/supercanvas/3.png";
-import lul from "../../assets/work/lul.jpg";
+import lul from "../../assets/work/lul.png";
 import butterfly from "../../assets/butterfly.png";
 import mr1 from "../../assets/mr1.jpg";
 import mr2 from "../../assets/mr2.jpg";
