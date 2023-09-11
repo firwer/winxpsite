@@ -463,17 +463,13 @@ export const WorkData = [
       TechIcon.CHATGPT,
     ],
     gallery: [],
-    overview: `InternWiz is your gateway to effortlessly discovering your ideal startup internship in Singapore. 
-    Our carefully curated platform offers a seamless experience, enabling students to embark on their dream 
-    internship journey with ease. Our platform features an infinitely scrolling dashboard that empowers you to 
-    explore a myriad of internship opportunities. You have the flexibility to refine your search based on 
-    parameters like startup size, industry, and funding stage, ensuring you find the perfect match for your 
-    aspirations. With InternWiz, you can conveniently add your preferred startups to your profile, making it 
-    simple to keep track of your interests. When you're ready to apply, we've streamlined the process for you. 
-    With just a single click, you can generate a personalized cold-email using our Language Model (LLM). 
-    This email is tailored to details from your resume, as well as essential information such as your major, 
-    year of study, and preferred internship role. InternWiz makes finding and applying for your dream startup 
-    internship an effortless and efficient experience, so you can focus on your career aspirations.`,
+    overview: `InternWiz is a carefully curated platform that offers a seamless experience, enabling students 
+    to embark on their dream internship journey with ease. The platform features an infinitely scrolling 
+    dashboard that offers over 4000+ up-to-date startups. Users have the flexibility to refine their search 
+    based on parameters like startup size, industry, and funding stage. Users can conveniently add their 
+    preferred startups to your profile and when they are ready to apply, users can easily generate a 
+    personalized cold-email using generative AI. The email is tailored to details from the uploaded resume, 
+    as well as essential information such as the user's major, year of study, and preferred internship role.`,
   },
 ] as WorkContent[];
 
@@ -566,7 +562,7 @@ export const WorkAccordionContent = [
     id: 13,
     type: WorkType.PERSONAL,
     icon: emptyfile,
-    title: "Digital Goods Management System",
+    title: "InternWiz - Startup Internship Portal",
     content: WorkData[WorkData.findIndex((x) => x.id === 13)],
   },
 ] as WorkFile[];
