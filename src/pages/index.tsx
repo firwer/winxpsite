@@ -23,6 +23,7 @@ import Outlook from "@/programs/Outlook";
 import MyWork from "@/programs/MyWork";
 import MsgBox from "components/MsgBox/MsgBox";
 import Welcome from "@/programs/Welcome";
+import MyGallery from "@/programs/MyGallery";
 export default function Home() {
   const Tabs = useSelector((state: RootState) => state.tab.tray);
   const currTabID = useSelector((state: RootState) => state.tab.id);
@@ -130,6 +131,8 @@ export default function Home() {
                   <Outlook />
                 ) : tab.program === App.WELCOME ? (
                   <Welcome id={tab.id} />
+                ) : tab.program === App.MYGALLERY ? (
+                  <MyGallery id={tab.id} />
                 ) : tab.program === App.ERROR ? (
                   <p>{tab.message}</p>
                 ) : tab.program === App.INFO ? (

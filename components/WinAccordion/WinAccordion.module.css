@@ -37,24 +37,6 @@
     rgba(198, 211, 255, 0.87);
 }
 
-.accordion_content_item {
-  margin: 5px 0px;
-  cursor: pointer;
-}
-
-.accordion_content_item:hover {
-  text-decoration: underline;
-}
-
-.accordion_content_text {
-  font-size: 12px;
-  line-height: 14px;
-  color: rgb(12, 50, 125);
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
 @keyframes slide-down {
   from {
     transform: translateY(-10%);

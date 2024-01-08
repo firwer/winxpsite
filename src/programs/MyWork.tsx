@@ -1,4 +1,4 @@
-import { TechIcon, WorkAccordionTitles } from "@/appData";
+import { TechIcon, WorkAccordionContent, WorkAccordionTitles } from "@/appData";
 import { RootState, WorkContent } from "@/types";
 import WinAccordion from "components/WinAccordion/WinAccordion";
 import { useEffect, useState } from "react";
@@ -59,11 +59,29 @@ const MyWork = ({ id }: Props) => {
         <div>
           <div className={styles.accordion}>
             {WorkAccordionTitles.map((title, index) => (
-              <WinAccordion
-                key={index}
-                title={title}
-                setDisplay={setCurrDisplay}
-              />
+              <WinAccordion key={index} title={title}>
+                {WorkAccordionContent.filter((f) => f.type === title).map(
+                  ({ title, icon, content }, index) => {
+                    return (
+                      <div
+                        key={index}
+                        className={styles.accordion_content_item}
+                        onClick={() => setCurrDisplay(content)}
+                      >
+                        <div className={styles.accordion_content_text}>
+                          <Image
+                            alt="accordionbtn"
+                            src={icon.src}
+                            height={15}
+                            width={15}
+                          />
+                          <p>{title}</p>
+                        </div>
+                      </div>
+                    );
+                  }
+                )}
+              </WinAccordion>
             ))}
           </div>
         </div>
