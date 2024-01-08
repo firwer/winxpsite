@@ -39,7 +39,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 75%;
+  height: 66%;
   width: 100%;
   background-color: #eef2fb;
 }
@@ -77,12 +77,9 @@
 }
 
 .slider_container {
-  position: relative;
   overflow-x: auto;
-  height: 100%;
   width: 100%;
-  width: 100%;
-  height: 25%;
+  height: 34%;
 }
 
 .slider {

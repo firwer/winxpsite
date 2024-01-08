@@ -102,7 +102,7 @@ const MyGallery = ({ id }: Props) => {
             width={0}
             height={0}
             sizes="100vw"
-            style={{ width: "95%", height: "90%", objectFit: "contain" }} // optional
+            style={{ width: "95%", height: "90%", objectFit: "contain" }}
           />
           <div className={styles.control_container}>
             <div className={styles.control_icon} onClick={handlePreviousImage}>
@@ -130,7 +130,11 @@ const MyGallery = ({ id }: Props) => {
             alt="Image background shadow"
             width={100}
             height={100}
-            style={{ position: "fixed", bottom: -15, right: 5 }}
+            style={{
+              position: "fixed",
+              bottom: -15,
+              right: 4,
+            }}
           />
         </div>
       </div>
