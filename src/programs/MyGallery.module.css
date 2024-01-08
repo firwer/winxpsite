@@ -36,6 +36,7 @@
 
 .display_container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 75%;
@@ -43,8 +44,41 @@
   background-color: #eef2fb;
 }
 
+.control_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 40px;
+  width: 100%;
+}
+
+.control_icon {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid transparent;
+  filter: brightness(1.05);
+}
+
+.control_icon:hover {
+  background: #f8f8f0;
+  border-radius: 5px;
+  border: 2px solid #cecec3;
+  filter: brightness(1.02);
+}
+
+.control_icon:active {
+  background: #e0e4e0;
+  border: 2px solid #989c90;
+  filter: brightness(0.98);
+}
+
 .slider_container {
   position: relative;
+  overflow-x: auto;
   height: 100%;
   width: 100%;
   width: 100%;

@@ -6,13 +6,18 @@ interface Props {
   img: StaticImageData;
   text: string;
   showImage: () => void;
+  sliderSelected: boolean;
 }
 
 // Function: To be used in my photography section slider container
 
-const GallerySliderIcon = ({ img, text, showImage }: Props) => {
+const GallerySliderIcon = ({ img, text, showImage, sliderSelected }: Props) => {
   const [selected, setSelected] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setSelected(sliderSelected);
+  }, [sliderSelected]);
 
   const handleClick = () => {
     HighlightIcon();

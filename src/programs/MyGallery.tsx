@@ -9,6 +9,8 @@ import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import pictureshadow from "../../assets/pictureshadow.png";
 import GallerySliderIcon from "components/GallerySliderIcon/GallerySliderIcon";
+import sliderleft from "../../assets/slider_left.png";
+import sliderright from "../../assets/slider_right.png";
 
 interface Props {
   id: number;
@@ -31,6 +33,24 @@ const MyGallery = ({ id }: Props) => {
   const setDisplay = (id: number) => {
     setCurrDisplay(PhotoCollection[id]);
   };
+
+  const handlePreviousImage = () => {
+    console.log(currDisplay.id);
+    if (currDisplay.id === 0) {
+      setCurrDisplay(PhotoCollection[PhotoCollection.length - 1]);
+      return;
+    }
+    setCurrDisplay(PhotoCollection[currDisplay.id - 1]);
+  };
+
+  const handleNextImage = () => {
+    if (currDisplay.id === PhotoCollection.length - 1) {
+      setCurrDisplay(PhotoCollection[0]);
+      return;
+    }
+    setCurrDisplay(PhotoCollection[currDisplay.id + 1]);
+  };
+
   return (
     <div className={styles.main}>
       <div className={styles.leftpanel}>
@@ -82,8 +102,16 @@ const MyGallery = ({ id }: Props) => {
             width={0}
             height={0}
             sizes="100vw"
-            style={{ width: "95%", height: "100%", objectFit: "contain" }} // optional
+            style={{ width: "95%", height: "90%", objectFit: "contain" }} // optional
           />
+          <div className={styles.control_container}>
+            <div className={styles.control_icon} onClick={handlePreviousImage}>
+              <Image src={sliderleft} alt="left control" height={25} />
+            </div>
+            <div className={styles.control_icon} onClick={handleNextImage}>
+              <Image src={sliderright} alt="right control" height={25} />
+            </div>
+          </div>
         </div>
         <div className={styles.slider_container}>
           <div className={styles.slider}>
@@ -93,15 +121,16 @@ const MyGallery = ({ id }: Props) => {
                 img={e.img}
                 text={e.title}
                 showImage={() => setDisplay(e.id)}
+                sliderSelected={currDisplay.id === e.id}
               />
             ))}
           </div>
           <Image
             src={pictureshadow}
             alt="Image background shadow"
-            width={130}
-            height={130}
-            style={{ position: "absolute", bottom: 0, right: 0 }}
+            width={100}
+            height={100}
+            style={{ position: "fixed", bottom: -15, right: 5 }}
           />
         </div>
       </div>

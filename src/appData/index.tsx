@@ -73,6 +73,8 @@ import col1 from "../../assets/gallery/0.jpg";
 import col2 from "../../assets/gallery/1.jpg";
 import col3 from "../../assets/gallery/2.jpg";
 import col4 from "../../assets/gallery/3.jpg";
+import col5 from "../../assets/gallery/4.jpg";
+import col6 from "../../assets/gallery/5.jpg";
 export const TechIcon = {
   REACT:
     "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB",
@@ -613,5 +615,21 @@ export const PhotoCollection = [
     desc: "One of the most famous temples in Kyoto, Japan",
     date: "22 November 2023",
     img: col4,
+  },
+  {
+    id: 4,
+    title: "Australia Forest Trail",
+    location: "Aqueduct Road, Melbourne, Australia",
+    desc: "Bird eye view of the forest trail during winter",
+    date: "June 2022",
+    img: col5,
+  },
+  {
+    id: 5,
+    title: "Milky Wave",
+    location: "Waiao Beach, Yilan, Taiwan",
+    desc: "Surfing in the middle of a milky ocean",
+    date: "17 November 2022",
+    img: col6,
   },
 ] as GalleryImage[];
