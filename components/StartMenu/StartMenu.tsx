@@ -126,7 +126,6 @@ const StartMenu = ({ menuControl }: StartMenuProps) => {
               icon={cmd}
               type={2}
             />
-            <StartMenuItem title="My Blog & Thoughts" icon={msn} type={2} />
             <StartMenuItem title="Paint" icon={paint} type={2} />
           </div>
           <div>

@@ -141,11 +141,6 @@ const Welcome = ({ id }: props) => {
                 onClick={() => handleRunApp(2)}
               />
               <WelcomeIcon
-                img={users}
-                text={"My Blog (Coming Soon)"}
-                tooltip="My personal thoughts and experiences"
-              />
-              <WelcomeIcon
                 img={outlook}
                 text={"Send Me An Email"}
                 tooltip="Reach out to me!"

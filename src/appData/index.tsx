@@ -175,20 +175,6 @@ export const AppDirectory: Map<number, Tab> = new Map([
     },
   ],
   [
-    3,
-    {
-      id: 0,
-      title: "My Blog",
-      message: "",
-      Icon: mycomputer,
-      isMinimized: false,
-      zIndex: 0,
-      program: App.MYBLOG,
-      prompt: false,
-      backBtnActive: false,
-    },
-  ],
-  [
     4,
     {
       id: 0,
