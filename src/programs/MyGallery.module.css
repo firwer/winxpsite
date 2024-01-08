@@ -35,6 +35,9 @@
 }
 
 .display_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 75%;
   width: 100%;
   background-color: #eef2fb;
@@ -137,4 +140,10 @@
   color: white;
   font-size: 12px;
   font-weight: 700;
+}
+
+.image_detail {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

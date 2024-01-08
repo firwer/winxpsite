@@ -64,5 +64,8 @@ export type WorkContent = {
 export type GalleryImage = {
   id: number;
   title: string;
+  desc: string;
+  location: string;
+  date: string;
   img: StaticImageData;
 };

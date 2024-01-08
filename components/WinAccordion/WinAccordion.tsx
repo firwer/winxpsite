@@ -1,4 +1,4 @@
-import { Children, Dispatch, SetStateAction, useState } from "react";
+import React, { Children, Dispatch, SetStateAction, useState } from "react";
 import styles from "./WinAccordion.module.css";
 import accordionbtn from "../../assets/workaccordion/accordionbtn.png";
 import accordionbtnd from "../../assets/workaccordion/accordionbtnd.png";
@@ -7,10 +7,10 @@ import { WorkAccordionContent } from "@/appData";
 import { WorkContent, WorkType } from "@/types";
 interface props {
   title: WorkType | string;
-  setDisplay?: Dispatch<SetStateAction<WorkContent>>;
+  children: React.ReactNode;
 }
 
-const WinAccordion = ({ title, setDisplay }: props) => {
+const WinAccordion = ({ title, children }: props) => {
   const [isActive, setIsActive] = useState(true);
 
   return (
@@ -38,31 +38,7 @@ const WinAccordion = ({ title, setDisplay }: props) => {
           )}
         </div>
       </div>
-      {isActive && (
-        <div className={styles.accordion_content}>
-          {WorkAccordionContent.filter((f) => f.type === title).map(
-            ({ title, icon, content }, index) => {
-              return (
-                <div
-                  key={index}
-                  className={styles.accordion_content_item}
-                  onClick={() => setDisplay && setDisplay(content)}
-                >
-                  <div className={styles.accordion_content_text}>
-                    <Image
-                      alt="accordionbtn"
-                      src={icon.src}
-                      height={15}
-                      width={15}
-                    />
-                    <p>{title}</p>
-                  </div>
-                </div>
-              );
-            }
-          )}
-        </div>
-      )}
+      {isActive && <div className={styles.accordion_content}>{children}</div>}
     </div>
   );
 };

@@ -5,22 +5,30 @@ import Image, { StaticImageData } from "next/image";
 interface Props {
   img: StaticImageData;
   text: string;
-  onClick?: () => void;
+  showImage: () => void;
 }
 
 // Function: To be used in my photography section slider container
 
-const GallerySliderIcon = ({ img, text, onClick }: Props) => {
+const GallerySliderIcon = ({ img, text, showImage }: Props) => {
   const [selected, setSelected] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+
+  const handleClick = () => {
+    HighlightIcon();
+    showImage();
+  };
+
   const HighlightIcon = () => {
     setSelected(!selected);
   };
+
   const handleClickOutside = (event: { target: any }) => {
     if (ref.current && !ref.current.contains(event.target)) {
       setSelected(false);
     }
   };
+
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
@@ -30,7 +38,7 @@ const GallerySliderIcon = ({ img, text, onClick }: Props) => {
 
   return (
     <div
-      onClick={HighlightIcon}
+      onClick={handleClick}
       className={selected ? styles.icon_selected : styles.icon}
       ref={ref}
     >

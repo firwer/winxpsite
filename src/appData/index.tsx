@@ -69,10 +69,10 @@ import mr2 from "../../assets/mr2.jpg";
 import mrIcon from "../../assets/mr_icon.png";
 import MS from "../../assets/work/MS.png";
 import MS2 from "../../assets/work/MS2.png";
-import col1 from "../../assets/gallery/1.jpg";
-import col2 from "../../assets/gallery/2.jpg";
-import col3 from "../../assets/gallery/3.jpg";
-import col4 from "../../assets/gallery/4.jpg";
+import col1 from "../../assets/gallery/0.jpg";
+import col2 from "../../assets/gallery/1.jpg";
+import col3 from "../../assets/gallery/2.jpg";
+import col4 from "../../assets/gallery/3.jpg";
 export const TechIcon = {
   REACT:
     "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB",
@@ -583,23 +583,35 @@ export const WorkAccordionContent = [
 // For My Photography Collection
 export const PhotoCollection = [
   {
-    id: 1,
+    id: 0,
     title: "Rocky afternoon",
+    location: "Dingboche-Lobuche, Nepal",
+    desc: "Taken enroute to Everest Base Camp",
+    date: "31 December 2022",
     img: col1,
   },
   {
-    id: 2,
+    id: 1,
     title: "Himalayan Mountain",
+    location: "Lobuche-GorakShep, Nepal",
+    desc: "Icy morning",
+    date: "1 January 2023",
     img: col2,
   },
   {
-    id: 3,
+    id: 2,
     title: "Autumn Foliage",
+    location: "Kyoto, Japan",
+    desc: "Japanese Autumn Foliage in the Imperial Palace of Kyoto",
+    date: "23 November 2023",
     img: col3,
   },
   {
-    id: 4,
+    id: 3,
     title: "Japanese Symmetry",
+    location: "Kiyomizu Temple, Kyoto",
+    desc: "One of the most famous temples in Kyoto, Japan",
+    date: "22 November 2023",
     img: col4,
   },
 ] as GalleryImage[];
