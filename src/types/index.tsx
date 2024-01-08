@@ -28,6 +28,7 @@ export enum App {
   MYWORK,
   OUTLOOK,
   MYDOCUMENT,
+  MYGALLERY,
   MYBLOG,
   ERROR,
   INFO,
@@ -58,4 +59,10 @@ export type WorkContent = {
   gallery: StaticImageData[];
   techstack: string[];
   overview: string;
+};
+
+export type GalleryImage = {
+  id: number;
+  title: string;
+  img: StaticImageData;
 };

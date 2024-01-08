@@ -1,11 +1,18 @@
-import { App, Tab, WorkContent, WorkFile, WorkType } from "src/types";
+import {
+  App,
+  GalleryImage,
+  Tab,
+  WorkContent,
+  WorkFile,
+  WorkType,
+} from "src/types";
 import error from "../../assets/dialog/error.png";
 import info from "../../assets/dialog/info.png";
 import warning from "../../assets/dialog/warning.png";
 import help from "../../assets/dialog/help.png";
 import cmd from "../../assets/cmd.png";
 import mycomputer from "../../assets/mycomputer.png";
-import folder_plain from "../../assets/folder_plain.png";
+import gallery from "../../assets/folder_image.png";
 import outlook from "../../assets/outlook.png";
 import dsta from "../../assets/workaccordion/dsta.png";
 import gdsc from "../../assets/workaccordion/gdsc.png";
@@ -62,6 +69,10 @@ import mr2 from "../../assets/mr2.jpg";
 import mrIcon from "../../assets/mr_icon.png";
 import MS from "../../assets/work/MS.png";
 import MS2 from "../../assets/work/MS2.png";
+import col1 from "../../assets/gallery/1.jpg";
+import col2 from "../../assets/gallery/2.jpg";
+import col3 from "../../assets/gallery/3.jpg";
+import col4 from "../../assets/gallery/4.jpg";
 export const TechIcon = {
   REACT:
     "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB",
@@ -179,12 +190,12 @@ export const AppDirectory: Map<number, Tab> = new Map([
     4,
     {
       id: 0,
-      title: "My Documents",
+      title: "My Photography Collection",
       message: "",
-      Icon: folder_plain,
+      Icon: gallery,
       isMinimized: false,
       zIndex: 0,
-      program: App.MYDOCUMENT,
+      program: App.MYGALLERY,
       prompt: false,
       backBtnActive: false,
     },
@@ -252,6 +263,8 @@ export const WorkAccordionTitles = [
   WorkType.PERSONAL,
   WorkType.SCHOOL,
 ];
+
+export const GalleryAccordionTitles = ["Details"];
 
 export const WorkData = [
   {
@@ -566,3 +579,27 @@ export const WorkAccordionContent = [
     content: WorkData[WorkData.findIndex((x) => x.id === 13)],
   },
 ] as WorkFile[];
+
+// For My Photography Collection
+export const PhotoCollection = [
+  {
+    id: 1,
+    title: "Rocky afternoon",
+    img: col1,
+  },
+  {
+    id: 2,
+    title: "Himalayan Mountain",
+    img: col2,
+  },
+  {
+    id: 3,
+    title: "Autumn Foliage",
+    img: col3,
+  },
+  {
+    id: 4,
+    title: "Japanese Symmetry",
+    img: col4,
+  },
+] as GalleryImage[];

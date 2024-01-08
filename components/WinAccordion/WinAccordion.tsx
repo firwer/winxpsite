@@ -6,8 +6,8 @@ import Image from "next/image";
 import { WorkAccordionContent } from "@/appData";
 import { WorkContent, WorkType } from "@/types";
 interface props {
-  title: WorkType;
-  setDisplay: Dispatch<SetStateAction<WorkContent>>;
+  title: WorkType | string;
+  setDisplay?: Dispatch<SetStateAction<WorkContent>>;
 }
 
 const WinAccordion = ({ title, setDisplay }: props) => {
@@ -46,7 +46,7 @@ const WinAccordion = ({ title, setDisplay }: props) => {
                 <div
                   key={index}
                   className={styles.accordion_content_item}
-                  onClick={() => setDisplay(content)}
+                  onClick={() => setDisplay && setDisplay(content)}
                 >
                   <div className={styles.accordion_content_text}>
                     <Image

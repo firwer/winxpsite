@@ -2,6 +2,7 @@ import WelcomeIcon from "components/WelcomeIcon/WelcomeIcon";
 import styles from "./Welcome.module.css";
 import linkedin from "../../assets/linkedin.png";
 import outlook from "../../assets/outlook_large.png";
+import gallery from "../../assets/folder_image.png";
 import pdf from "../../assets/pdf.png";
 import github from "../../assets/github.png";
 import cmd from "../../assets/cmd.png";
@@ -149,6 +150,12 @@ const Welcome = ({ id }: props) => {
                 text={"Send Me An Email"}
                 tooltip="Reach out to me!"
                 onClick={() => handleRunApp(1)}
+              />
+              <WelcomeIcon
+                img={gallery}
+                text={"My Photography Collection"}
+                tooltip="Click to view!"
+                onClick={() => handleRunApp(4)}
               />
             </div>
           </div>

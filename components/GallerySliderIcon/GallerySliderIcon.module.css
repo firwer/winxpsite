@@ -1,0 +1,56 @@
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 2px solid #ece9d8;
+  margin: 15px;
+  width: 85px;
+  height: 85px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.icon_selected {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 3px solid #316ac5;
+  margin: 15px;
+  width: 85px;
+  height: 85px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.iconlabel {
+  position: absolute;
+  bottom: 0;
+  top: 84px;
+  left: 0;
+  right: 0;
+  height: 15px;
+  text-align: center;
+  font-size: 12px;
+  color: black;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.iconlabel_selected {
+  position: absolute;
+  bottom: 0;
+  top: 84px;
+  left: 0;
+  right: 0;
+  height: 15px;
+  text-align: center;
+  font-size: 12px;
+  color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: rgb(11, 97, 255);
+}
