@@ -21,8 +21,8 @@ import userprofile2 from "../../assets/userprofile2.jpg";
 import ebc1 from "../../assets/ebc1.jpeg";
 import ebc2 from "../../assets/ebc2.jpg";
 
-const INTRO = `Hi, I'm Wei Pin, an aspiring technopreneur based in Singapore. I am 
-  currently a Computer Engineering Sophomore at the National University of Singapore and I am
+const INTRO = `Hi, I'm Wei Pin, an aspiring software engineer and entrepreneur based in Singapore. I am 
+  currently a Computer Engineering Fresh Graduate at the National University of Singapore and I am
   passionate about building innovative software solutions that solves problems.`;
 
 const WHYSITE = `I always love challenging myself to creating something different and interesting.
