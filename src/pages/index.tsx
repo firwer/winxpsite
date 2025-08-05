@@ -67,13 +67,13 @@ export default function Home() {
         >
           <DesktopIcon
             appID={1}
-            doubleClick
+            doubleClick={() => void 0}
             title="My Computer"
             img={mycomputer}
           />
           <DesktopIcon
             appID={2}
-            doubleClick
+            doubleClick={() => void 0}
             title="Recycling Bin"
             img={bin}
           />
@@ -104,7 +104,7 @@ export default function Home() {
 
           <DesktopIcon
             appID={7}
-            doubleClick
+            doubleClick={() => void 0}
             title="My Hobbies"
             img={solitare}
           />
