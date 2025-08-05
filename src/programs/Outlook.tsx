@@ -54,7 +54,6 @@ const Outlook = () => {
             title: "Outlook - Message Sent!",
             message: "Your message has been sent! I will get back to you soon!",
           };
-          console.log(newTab);
           store.dispatch(addTab(newTab));
           if (emailRef.current !== null) {
             emailRef.current.value = "";

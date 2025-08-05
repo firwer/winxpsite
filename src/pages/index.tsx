@@ -33,9 +33,6 @@ export default function Home() {
     store.dispatch(addTab(newTab));
   };
 
-  const iconClicked = () => {
-    console.log("Icon Clicked!");
-  };
   const handleOpenGitHub = () => {
     window.open("https://github.com/firwer", "_blank", "noreferrer");
   };
@@ -70,13 +67,13 @@ export default function Home() {
         >
           <DesktopIcon
             appID={1}
-            doubleClick={iconClicked}
+            doubleClick
             title="My Computer"
             img={mycomputer}
           />
           <DesktopIcon
             appID={2}
-            doubleClick={iconClicked}
+            doubleClick
             title="Recycling Bin"
             img={bin}
           />
@@ -107,7 +104,7 @@ export default function Home() {
 
           <DesktopIcon
             appID={7}
-            doubleClick={iconClicked}
+            doubleClick
             title="My Hobbies"
             img={solitare}
           />
