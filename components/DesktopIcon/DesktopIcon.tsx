@@ -8,7 +8,7 @@ const DesktopIcon = (props: {
   title: string;
   img: StaticImageData;
   appID: number;
-  doubleClick: any;
+  doubleClick: () => void;
 }) => {
   const [selected, setSelected] = useState(false);
   const ref = useRef<HTMLDivElement>(null);

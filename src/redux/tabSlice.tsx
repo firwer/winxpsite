@@ -26,9 +26,12 @@ export const tabtraySlice = createSlice({
   },
   reducers: {
     addTab: (state, action) => {
-      state.tray.push(action.payload);
-      action.payload.zIndex = state.currentZIndex;
-      state.currentFocusedTab = action.payload.id;
+      const newTab = {
+        ...action.payload,
+        zIndex: state.currentZIndex,
+      };
+      state.tray.push(newTab);
+      state.currentFocusedTab = newTab.id;
       state.id = state.id + 1;
       state.currentZIndex = state.currentZIndex + 1;
     },
