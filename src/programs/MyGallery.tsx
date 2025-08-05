@@ -35,7 +35,6 @@ const MyGallery = ({ id }: Props) => {
   };
 
   const handlePreviousImage = () => {
-    console.log(currDisplay.id);
     if (currDisplay.id === 0) {
       setCurrDisplay(PhotoCollection[PhotoCollection.length - 1]);
       return;

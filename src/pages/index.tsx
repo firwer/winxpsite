@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Inter } from "@next/font/google";
+import { Inter } from "next/font/google";
 import StartBar from "components/StartBar/StartBar";
 import "xp.css/dist/XP.css";
 import styles from "../styles/Home.module.css";
@@ -33,9 +33,6 @@ export default function Home() {
     store.dispatch(addTab(newTab));
   };
 
-  const iconClicked = () => {
-    console.log("Icon Clicked!");
-  };
   const handleOpenGitHub = () => {
     window.open("https://github.com/firwer", "_blank", "noreferrer");
   };
@@ -70,13 +67,13 @@ export default function Home() {
         >
           <DesktopIcon
             appID={1}
-            doubleClick={iconClicked}
+            doubleClick={() => void 0}
             title="My Computer"
             img={mycomputer}
           />
           <DesktopIcon
             appID={2}
-            doubleClick={iconClicked}
+            doubleClick={() => void 0}
             title="Recycling Bin"
             img={bin}
           />
@@ -107,7 +104,7 @@ export default function Home() {
 
           <DesktopIcon
             appID={7}
-            doubleClick={iconClicked}
+            doubleClick={() => void 0}
             title="My Hobbies"
             img={solitare}
           />

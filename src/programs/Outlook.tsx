@@ -31,7 +31,11 @@ const Outlook = () => {
   const subjectRef = React.useRef<HTMLInputElement>(null);
   const messageRef = React.useRef<HTMLTextAreaElement>(null);
   const sendEmail = async () => {
-    if (from !== "" && subject !== "") {
+    if (!from || !subject || !message) {
+      return;
+    }
+    
+    try {
       await axios({
         method: "post",
         url: `https://api.mailgun.net/v3/pohwp.dev/messages`,
@@ -45,33 +49,35 @@ const Outlook = () => {
           subject: "New Message From A Visitor: " + subject,
           text: "From: " + from + "\nMessage: " + message,
         },
-      })
-        .then(() => {
-          const newTab = {
-            ...AppDirectory.get(7),
-            id: uuidv4(),
-            zIndex: currTabID,
-            title: "Outlook - Message Sent!",
-            message: "Your message has been sent! I will get back to you soon!",
-          };
-          console.log(newTab);
-          store.dispatch(addTab(newTab));
-          if (emailRef.current !== null) {
-            emailRef.current.value = "";
-            setFrom("");
-          }
-          if (subjectRef.current !== null) {
-            subjectRef.current.value = "";
-            setSubject("");
-          }
-          if (messageRef.current !== null) {
-            messageRef.current.value = "";
-            setMessage("");
-          }
-        })
-        .catch(() => {
-          console.error("Error sending email:");
-        });
+      });
+      
+      // Success handling
+      const newTab = {
+        ...AppDirectory.get(7),
+        id: uuidv4(),
+        zIndex: currTabID,
+        title: "Outlook - Message Sent!",
+        message: "Your message has been sent! I will get back to you soon!",
+      };
+      store.dispatch(addTab(newTab));
+      
+      // Clear form
+      setFrom("");
+      setSubject("");
+      setMessage("");
+      if (emailRef.current) emailRef.current.value = "";
+      if (subjectRef.current) subjectRef.current.value = "";
+      if (messageRef.current) messageRef.current.value = "";
+    } catch (error) {
+      // Show error to user
+      const errorTab = {
+        ...AppDirectory.get(5),
+        id: uuidv4(),
+        zIndex: currTabID,
+        title: "Error - Email Failed",
+        message: "Failed to send email. Please try again later.",
+      };
+      store.dispatch(addTab(errorTab));
     }
   };
 

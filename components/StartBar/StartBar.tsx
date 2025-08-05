@@ -72,11 +72,10 @@ const StartBar = () => {
   // Time Update
   useEffect(() => {
     const timer = setInterval(() => {
-      const newTime = getTime();
-      newTime !== time && setTime(newTime);
+      setTime(getTime());
     }, 1000);
     return () => clearInterval(timer);
-  }, [time]);
+  }, []);
 
   // Start Menu Detection Out of Bound Listener
   useEffect(() => {

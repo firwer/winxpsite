@@ -18,8 +18,8 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import userprofile from "../../assets/userprofile.jpg";
 import userprofile2 from "../../assets/userprofile2.jpg";
-import ebc1 from "../../assets/ebc1.jpeg";
-import ebc2 from "../../assets/ebc2.jpg";
+import ebc1 from "../../assets/ebc1.webp";
+import ebc2 from "../../assets/ebc2.webp";
 
 const INTRO = `Hi, I'm Wei Pin, an aspiring software engineer and entrepreneur based in Singapore. I am 
   currently a Computer Engineering Fresh Graduate at the National University of Singapore and I am
