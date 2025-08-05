@@ -69,12 +69,12 @@ import mr2 from "../../assets/mr2.jpg";
 import mrIcon from "../../assets/mr_icon.png";
 import MS from "../../assets/work/MS.png";
 import MS2 from "../../assets/work/MS2.png";
-import col1 from "../../assets/gallery/0.jpg";
-import col2 from "../../assets/gallery/1.jpg";
-import col3 from "../../assets/gallery/2.jpg";
-import col4 from "../../assets/gallery/3.jpg";
-import col5 from "../../assets/gallery/4.jpg";
-import col6 from "../../assets/gallery/5.jpg";
+import col1 from "../../assets/gallery/0.webp";
+import col2 from "../../assets/gallery/1.webp";
+import col3 from "../../assets/gallery/2.webp";
+import col4 from "../../assets/gallery/3.webp";
+import col5 from "../../assets/gallery/4.webp";
+import col6 from "../../assets/gallery/5.webp";
 export const TechIcon = {
   REACT:
     "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB",
