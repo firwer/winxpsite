@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Inter } from "@next/font/google";
+import { Inter } from "next/font/google";
 import StartBar from "components/StartBar/StartBar";
 import "xp.css/dist/XP.css";
 import styles from "../styles/Home.module.css";
