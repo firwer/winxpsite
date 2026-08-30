@@ -6,6 +6,7 @@ import {
   WorkFile,
   WorkType,
 } from "src/types";
+import { StaticImageData } from "next/image";
 import error from "../../assets/dialog/error.png";
 import info from "../../assets/dialog/info.png";
 import warning from "../../assets/dialog/warning.png";
@@ -75,6 +76,9 @@ import col3 from "../../assets/gallery/2.webp";
 import col4 from "../../assets/gallery/3.webp";
 import col5 from "../../assets/gallery/4.webp";
 import col6 from "../../assets/gallery/5.webp";
+// Start menu user icon (changeable for fun)
+export const UserIcons: StaticImageData[] = [butterfly, lul];
+export const DEFAULT_USER_ICON: StaticImageData = butterfly;
 export const TechIcon = {
   REACT:
     "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB",
