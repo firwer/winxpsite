@@ -176,3 +176,8 @@
   border-radius: 3px;
   margin-right: 3px;
 }
+.userIcon {
+  cursor: pointer;
+  border-radius: 50%;
+  object-fit: cover;
+}

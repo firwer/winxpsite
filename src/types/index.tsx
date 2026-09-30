@@ -21,6 +21,7 @@ export type RootState = {
   };
   system: {
     backactive: boolean;
+    userIcon?: StaticImageData;
   };
 };
 
